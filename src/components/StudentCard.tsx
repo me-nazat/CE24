@@ -43,6 +43,8 @@ export default function StudentCard({ student }: StudentCardProps) {
                             src={student.avatarUrl}
                             alt={student.name}
                             fill
+                            quality={60}
+                            priority={student.isRep}
                             sizes="(max-width: 768px) 176px, 192px"
                             className="object-cover"
                         />

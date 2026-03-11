@@ -10,16 +10,6 @@ export default function StudentGrid({ students }: StudentGridProps) {
     const reps = students.filter((s) => s.isRep);
     const generalStudents = students;
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        show: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-            },
-        },
-    };
-
     const itemVariants = {
         hidden: { opacity: 0, scale: 0.95, y: 30 },
         show: {
@@ -56,19 +46,19 @@ export default function StudentGrid({ students }: StudentGridProps) {
                         </h2>
                         <div className="h-px bg-slate-200 dark:bg-slate-800 flex-1"></div>
                     </div>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true, margin: "-100px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
-                    >
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                         {reps.map((student) => (
-                            <motion.div key={student.id} variants={itemVariants}>
+                            <motion.div 
+                                key={student.id} 
+                                variants={itemVariants}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={{ once: true, margin: "50px" }}
+                            >
                                 <StudentCard student={student} />
                             </motion.div>
                         ))}
-                    </motion.div>
+                    </div>
                 </div>
             )}
 
@@ -81,19 +71,19 @@ export default function StudentGrid({ students }: StudentGridProps) {
                         </h2>
                         <div className="h-px bg-slate-200 dark:bg-slate-800 flex-1"></div>
                     </div>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true, margin: "-100px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
-                    >
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                         {generalStudents.map((student) => (
-                            <motion.div key={student.id} variants={itemVariants}>
+                            <motion.div 
+                                key={student.id} 
+                                variants={itemVariants}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={{ once: true, margin: "50px" }}
+                            >
                                 <StudentCard student={student} />
                             </motion.div>
                         ))}
-                    </motion.div>
+                    </div>
                 </div>
             )}
         </div>

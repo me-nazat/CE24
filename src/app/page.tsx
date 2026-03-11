@@ -9,8 +9,7 @@ import { students } from "@/data/students";
 
 // Dynamically import heavy components
 const StudentGrid = dynamic(() => import("@/components/StudentGrid"), {
-  loading: () => <div className="w-full text-center py-20 text-brand-cyan">Loading Directory...</div>,
-  ssr: false // Optimization: No need to SSR the huge grid
+  loading: () => <div className="w-full text-center py-20 text-brand-cyan">Loading Directory...</div>
 });
 const MemoriesFooter = dynamic(() => import("@/components/MemoriesFooter"), { ssr: false });
 
