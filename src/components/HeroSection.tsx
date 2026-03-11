@@ -10,6 +10,7 @@ export default function HeroSection() {
                     alt="University Campus"
                     fill
                     priority
+                    quality={60}
                     className="object-cover object-center"
                 />
                 {/* Dark overlay with slight navy tint */}

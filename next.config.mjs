@@ -3,6 +3,7 @@ const nextConfig = {
     // Enable React Compiler for massive performance gains
     reactCompiler: true,
     images: {
+        formats: ['image/avif', 'image/webp'],
         remotePatterns: [
             {
                 protocol: "https",
