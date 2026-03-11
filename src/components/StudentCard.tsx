@@ -14,7 +14,7 @@ export default function StudentCard({ student }: StudentCardProps) {
 
     return (
         <div
-            className="relative w-full aspect-[3/4] max-w-sm mx-auto group perspective-1000 cv-auto hover:z-10"
+            className="relative w-full aspect-[3/4] max-w-[280px] sm:max-w-sm mx-auto group perspective-1000 cv-auto hover:z-10"
             onMouseEnter={() => setIsFlipped(true)}
             onMouseLeave={() => setIsFlipped(false)}
             onClick={() => setIsFlipped(!isFlipped)}
@@ -38,12 +38,12 @@ export default function StudentCard({ student }: StudentCardProps) {
                         </div>
                     )}
 
-                    <div className="relative w-36 h-36 md:w-40 md:h-40 mb-6 rounded-full overflow-hidden border-[3px] border-white dark:border-slate-700 shadow-xl transition-transform duration-500 group-hover:scale-105">
+                    <div className="relative w-40 h-40 md:w-48 md:h-48 mb-6 rounded-full overflow-hidden border-[3px] border-white dark:border-slate-700 shadow-xl transition-transform duration-500 group-hover:scale-105">
                         <Image
                             src={student.avatarUrl}
                             alt={student.name}
                             fill
-                            sizes="(max-width: 768px) 144px, 160px"
+                            sizes="(max-width: 768px) 160px, 192px"
                             className="object-cover"
                         />
                     </div>

@@ -57,6 +57,19 @@ export const students: Student[] = [
         }
     },
     {
+        id: "20",
+        studentId: "2400010",
+        name: "Salman Ahmed Nasim",
+        highSchool: "Alhaz Wazedul Islam Khan High School, Kishoreganj",
+        college: "Gurudoyal Govt. College, Kishoreganj",
+        hometown: "Kishoreganj",
+        avatarUrl: "/students/Photos/2400010.jpg",
+        socials: {
+            facebook: "https://www.facebook.com/avenue.rtc",
+            whatsapp: "https://wa.me/+8801917261207"
+        }
+    },
+    {
         id: "4",
         studentId: "2400012",
         name: "Rezuana Karim",
@@ -108,6 +121,19 @@ export const students: Student[] = [
         }
     },
     {
+        id: "21",
+        studentId: "2400021",
+        name: "Hassan Mahmud Emon",
+        highSchool: "Qadirabad Cantonment Public School, Natore",
+        college: "Dhaka Residential Model College, Dhaka",
+        hometown: "Pabna",
+        avatarUrl: "/students/Photos/2400021.jpg",
+        socials: {
+            facebook: "https://www.facebook.com/share/1FZ92sTaFc/",
+            whatsapp: "https://wa.me/+8801792675402"
+        }
+    },
+    {
         id: "8",
         studentId: "2400023",
         name: "Ashfi Ul Haque Aronno",
@@ -118,6 +144,19 @@ export const students: Student[] = [
         socials: {
             facebook: "https://www.facebook.com/share/1DezTEZGoe/",
             whatsapp: "https://wa.me/+8801760000970"
+        }
+    },
+    {
+        id: "22",
+        studentId: "2400024",
+        name: "Al Mahamud Nobin",
+        highSchool: "Kazi Azhar Ali Govt. Model High School, Gaibandha",
+        college: "Notre Dame College, Dhaka",
+        hometown: "Gaibandha",
+        avatarUrl: "https://i.pravatar.cc/300?img=12",
+        socials: {
+            facebook: "https://www.facebook.com/al.mahamud.nobin",
+            whatsapp: "https://wa.me/+8801892510933"
         }
     },
     {
@@ -172,16 +211,68 @@ export const students: Student[] = [
         }
     },
     {
+        id: "23",
+        studentId: "2400038",
+        name: "Md Ariful Islam",
+        highSchool: "Banwarinagar Govt. CB Pilot High School, Pabna",
+        college: "Padda Government College, Rajshahi",
+        hometown: "Pabna",
+        avatarUrl: "/students/Photos/2400038.jpg",
+        socials: {
+            facebook: "https://www.facebook.com/abedin.arifin.5",
+            whatsapp: "https://wa.me/+8801621908125"
+        }
+    },
+    {
+        id: "24",
+        studentId: "2400039",
+        name: "Md Adil",
+        highSchool: "Ideal School and College, Dhaka",
+        college: "Adamjee Cantonment College, Dhaka",
+        hometown: "Sirajganj",
+        avatarUrl: "https://i.pravatar.cc/300?img=11",
+        socials: {
+            facebook: "https://www.facebook.com/share/1E3KpfT6V8/",
+            whatsapp: "https://wa.me/+8801752406634"
+        }
+    },
+    {
         id: "13",
         studentId: "2400040",
         name: "Md. Ibrahim Hosen",
         highSchool: "Saicha Para B.J.M.A Majid High School",
         college: "Paruara Abdul Matin Khasru College",
         hometown: "Cumilla",
-        avatarUrl: "https://i.pravatar.cc/300?img=21",
+        avatarUrl: "/students/Photos/2400040.png",
         socials: {
             facebook: "https://www.facebook.com/share/17PwfXBkyR/",
             whatsapp: "https://wa.me/+8801728760650"
+        }
+    },
+    {
+        id: "25",
+        studentId: "2400042",
+        name: "Rauf Hossain Roddro",
+        highSchool: "Ideal School and College, Dhaka",
+        college: "St. Joseph Higher Secondary School, Dhaka",
+        hometown: "Gaibandha",
+        avatarUrl: "/students/Photos/2400042.jpg",
+        socials: {
+            facebook: "https://www.facebook.com/share/1C86u3iAta/",
+            whatsapp: "https://wa.me/+8801998630526"
+        }
+    },
+    {
+        id: "26",
+        studentId: "2400043",
+        name: "Sanzida Rafat Lam-yea",
+        highSchool: "Viqarunnisa Noon School, Dhaka",
+        college: "Viqarunnisa Noon College, Dhaka",
+        hometown: "Pabna",
+        avatarUrl: "/students/Photos/2400043.jpg",
+        socials: {
+            facebook: "https://www.facebook.com/share/1C2gLJj5EV/",
+            whatsapp: "https://wa.me/+8801728771200"
         }
     },
     {
@@ -204,7 +295,7 @@ export const students: Student[] = [
         highSchool: "Naogaon K.D Govt' High School, Naogaon",
         college: "Rajshahi Govt' City College, Rajshahi",
         hometown: "Naogaon",
-        avatarUrl: "https://i.pravatar.cc/300?img=23",
+        avatarUrl: "/students/Photos/2400048.jpg",
         socials: {
             facebook: "https://www.facebook.com/ShakibSiam6345",
             whatsapp: "https://wa.me/+8801763456814"
@@ -261,6 +352,32 @@ export const students: Student[] = [
         socials: {
             facebook: "https://www.facebook.com/share/1AekxXVoaF/",
             whatsapp: "https://wa.me/+8801768876336"
+        }
+    },
+    {
+        id: "27",
+        studentId: "2400055",
+        name: "Sanzid Suchok",
+        highSchool: "Alhera Academy school and college, Pabna",
+        college: "GOVT.EDWARD COLLEGE PABNA",
+        hometown: "Pabna",
+        avatarUrl: "/students/Photos/2400055.jpg",
+        socials: {
+            facebook: "https://www.facebook.com/share/1DxxpyhWGC/",
+            whatsapp: "https://wa.me/+8801318843058"
+        }
+    },
+    {
+        id: "28",
+        studentId: "2400057",
+        name: "Sanjida Amin Preety",
+        highSchool: "Govt. Agragami Girl's High School, Sylhet",
+        college: "Sylhet Govt. Women's College, Sylhet",
+        hometown: "Sylhet",
+        avatarUrl: "/students/Photos/2400057.jpg",
+        socials: {
+            facebook: "https://www.facebook.com/share/1CNR94rfty/",
+            whatsapp: "https://wa.me/+8801774842333"
         }
     }
 ];
