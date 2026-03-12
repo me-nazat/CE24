@@ -2,9 +2,7 @@
 
 :root {
   --background: #f8fafc;
-  /* Tailwind slate-50 */
   --foreground: #0f172a;
-  /* Tailwind slate-900 */
 }
 
 @theme inline {
@@ -16,21 +14,36 @@
   --color-brand-navy: #0B192C;
   --color-brand-cyan: #00E5FF;
   --color-brand-accent: #EAB308;
-  /* Yellow-500 for the reps border */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0f172a;
-    /* slate-900 */
     --foreground: #f8fafc;
-    /* slate-50 */
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Smooth scroll for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
 }
 
 @layer utilities {
@@ -59,73 +72,119 @@ body {
     scrollbar-width: none;
   }
 
-  /* Optimization for large lists of DOM nodes */
+  /* GPU-accelerated performance for large lists */
   .cv-auto {
     content-visibility: auto;
-    contain-intrinsic-size: 1000px;
+    contain-intrinsic-size: auto 420px;
   }
 
-  /* Reveal Animations */
-  .animate-fade-in-up {
-    animation: fadeInUp 1s ease-out forwards;
+  /* Lightweight CSS scroll-reveal — replaces heavy per-card framer-motion */
+  .reveal-card {
     opacity: 0;
+    transform: translateY(24px);
+    animation: revealCard 0.5s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 0% entry 30%;
   }
 
-  .delay-100 {
-    animation-delay: 100ms;
-  }
-
-  .delay-200 {
-    animation-delay: 200ms;
-  }
-
-  .delay-300 {
-    animation-delay: 300ms;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
+  /* Fallback for browsers without scroll-driven animations */
+  @supports not (animation-timeline: view()) {
+    .reveal-card {
+      opacity: 1;
+      transform: none;
+      animation: none;
     }
+  }
 
+  @keyframes revealCard {
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
+
+  /* Hero reveal animations */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .delay-100 {
+    animation-delay: 150ms;
+  }
+
+  .delay-200 {
+    animation-delay: 300ms;
+  }
+
+  .delay-300 {
+    animation-delay: 450ms;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Subtle shimmer for loading states */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.08) 50%,
+      rgba(255,255,255,0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
 }
 
-/* Premium Aesthetic Backing Layer */
-@keyframes breathe {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 0.8;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 1;
-    }
-}
-
+/* Premium background glow — GPU-accelerated with will-change */
 body::before {
-    content: '';
-    position: fixed;
-    inset: -50px;
-    z-index: -1;
-    background:
-        radial-gradient(circle at 15% 10%, rgba(0, 229, 255, 0.08), transparent 45%),
-        radial-gradient(circle at 85% 60%, rgba(234, 179, 8, 0.05), transparent 50%),
-        radial-gradient(circle at 50% 90%, rgba(0, 102, 255, 0.06), transparent 50%);
-    pointer-events: none;
-    animation: breathe 15s ease-in-out infinite;
+  content: '';
+  position: fixed;
+  inset: -50px;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(0, 229, 255, 0.07), transparent 45%),
+    radial-gradient(circle at 85% 60%, rgba(234, 179, 8, 0.04), transparent 50%),
+    radial-gradient(circle at 50% 90%, rgba(0, 102, 255, 0.05), transparent 50%);
+  pointer-events: none;
+  will-change: opacity;
+  animation: breathe 20s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-    body::before {
-        background:
-            radial-gradient(circle at 15% 10%, rgba(0, 229, 255, 0.12), transparent 45%),
-            radial-gradient(circle at 85% 60%, rgba(234, 179, 8, 0.08), transparent 50%),
-            radial-gradient(circle at 50% 90%, rgba(0, 102, 255, 0.1), transparent 50%);
-    }
+  body::before {
+    background:
+      radial-gradient(circle at 15% 10%, rgba(0, 229, 255, 0.1), transparent 45%),
+      radial-gradient(circle at 85% 60%, rgba(234, 179, 8, 0.06), transparent 50%),
+      radial-gradient(circle at 50% 90%, rgba(0, 102, 255, 0.08), transparent 50%);
+  }
+}
+
+/* Selection color */
+::selection {
+  background: rgba(0, 229, 255, 0.25);
+  color: inherit;
 }
