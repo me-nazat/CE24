@@ -17,6 +17,19 @@ export interface Student {
 
 export const students: Student[] = [
     {
+        id: "29",
+        studentId: "2400003",
+        name: "Shah Kudrot-E-Alam Kabbo",
+        highSchool: "Ideal School & College, Gaibandha",
+        college: "Notre Dame College, Dhaka",
+        hometown: "Gaibandha",
+        avatarUrl: "https://i.pravatar.cc/300?img=33",
+        socials: {
+            facebook: "https://www.facebook.com/share/17c9hdPcKB/",
+            whatsapp: "https://wa.me/+8801824383707"
+        }
+    },
+    {
         id: "1",
         studentId: "2400005",
         name: "Nazat Al Mahmud",
@@ -29,6 +42,19 @@ export const students: Student[] = [
             whatsapp: "https://wa.me/+8801713783569"
         },
         isRep: true
+    },
+    {
+        id: "30",
+        studentId: "2400006",
+        name: "Shadman Hossen",
+        highSchool: "Sena Public School & College, Savar",
+        college: "Savar Cantonment Public School & College, Dhaka",
+        hometown: "Savar, Dhaka",
+        avatarUrl: "https://i.pravatar.cc/300?img=34",
+        socials: {
+            facebook: "https://www.facebook.com/share/14ZAU9nHZWr/",
+            whatsapp: "https://wa.me/+8801779444659"
+        }
     },
     {
         id: "2",
@@ -54,6 +80,19 @@ export const students: Student[] = [
         socials: {
             facebook: "https://www.facebook.com/share/1CNYsDGze3/",
             whatsapp: "https://wa.me/+8801303404386"
+        }
+    },
+    {
+        id: "31",
+        studentId: "2400009",
+        name: "Nayem Ahmed",
+        highSchool: "Collectorate Public School, Dhaka",
+        college: "BAF Shaheen College, Dhaka",
+        hometown: "Dhaka",
+        avatarUrl: "https://i.pravatar.cc/300?img=35",
+        socials: {
+            facebook: "https://www.facebook.com/iyowosadat",
+            whatsapp: "https://wa.me/+8801842021677"
         }
     },
     {
@@ -121,6 +160,32 @@ export const students: Student[] = [
         }
     },
     {
+        id: "32",
+        studentId: "2400018",
+        name: "Saad Jawher",
+        highSchool: "Chattogram Govt. High School, Chattogram",
+        college: "Bakalia Govt. College, Chattogram",
+        hometown: "Chattogram",
+        avatarUrl: "https://i.pravatar.cc/300?img=36",
+        socials: {
+            facebook: "https://www.facebook.com/jawad.sharaf.725390",
+            whatsapp: "https://wa.me/+8801550674256"
+        }
+    },
+    {
+        id: "33",
+        studentId: "2400019",
+        name: "Sajjadur Rahman",
+        highSchool: "Harinarayonpur Union High School, Noakhali",
+        college: "Noakhali Govt College, Noakhali",
+        hometown: "Noakhali",
+        avatarUrl: "https://i.pravatar.cc/300?img=37",
+        socials: {
+            facebook: "https://www.facebook.com/share/18ASDoMhzS/",
+            whatsapp: "https://wa.me/+8801762073203"
+        }
+    },
+    {
         id: "21",
         studentId: "2400021",
         name: "Hassan Mahmud Emon",
@@ -131,6 +196,19 @@ export const students: Student[] = [
         socials: {
             facebook: "https://www.facebook.com/share/1FZ92sTaFc/",
             whatsapp: "https://wa.me/+8801792675402"
+        }
+    },
+    {
+        id: "34",
+        studentId: "2400022",
+        name: "Md. Mahmudul Amin Limon",
+        highSchool: "Saidpur Govt Science High School, Nilphamari",
+        college: "Saidpur Govt Science College, Nilphamari",
+        hometown: "Nilphamari",
+        avatarUrl: "https://i.pravatar.cc/300?img=38",
+        socials: {
+            facebook: "https://www.facebook.com/share/14WrPZYwPFY/",
+            whatsapp: "https://wa.me/+8801865503412"
         }
     },
     {
@@ -173,6 +251,19 @@ export const students: Student[] = [
         }
     },
     {
+        id: "35",
+        studentId: "2400027",
+        name: "MD. Akib Rahman",
+        highSchool: "Gangni Pilot High School, Kushtia",
+        college: "Kushtia Govt College, Kushtia",
+        hometown: "Kushtia",
+        avatarUrl: "https://i.pravatar.cc/300?img=39",
+        socials: {
+            facebook: "https://www.facebook.com/share/1G42UJKhfZ/",
+            whatsapp: "https://wa.me/+8801762775198"
+        }
+    },
+    {
         id: "10",
         studentId: "2400028",
         name: "Md. Abdul Hasib",
@@ -186,6 +277,32 @@ export const students: Student[] = [
         }
     },
     {
+        id: "36",
+        studentId: "2400030",
+        name: "S.M. Wahidur Rahman",
+        highSchool: "Monipur High School, Dhaka",
+        college: "Mirpur Cantonment Public School & College, Dhaka",
+        hometown: "Kushtia",
+        avatarUrl: "https://i.pravatar.cc/300?img=40",
+        socials: {
+            facebook: "https://www.facebook.com/share/1B7x5CCGoP/",
+            whatsapp: "https://wa.me/+8801736156343"
+        }
+    },
+    {
+        id: "37",
+        studentId: "2400031",
+        name: "Fahim Hasan Fahad",
+        highSchool: "Police Lines Adarsha High School, Tangail",
+        college: "Major Gen. Mahmudul Hasan College, Tangail",
+        hometown: "Tangail",
+        avatarUrl: "https://i.pravatar.cc/300?img=41",
+        socials: {
+            facebook: "https://www.facebook.com/share/1AxKDNFhuh/",
+            whatsapp: "https://wa.me/+8801331501055"
+        }
+    },
+    {
         id: "11",
         studentId: "2400032",
         name: "Shoyeb Nafseen Priang",
@@ -194,6 +311,7 @@ export const students: Student[] = [
         hometown: "Tangail",
         avatarUrl: "/students/Photos/2400032.jpg",
         socials: {
+            facebook: "https://www.facebook.com/share/16n8JUADwp/",
             whatsapp: "https://wa.me/+8801752633428"
         }
     },
@@ -378,6 +496,19 @@ export const students: Student[] = [
         socials: {
             facebook: "https://www.facebook.com/share/1CNR94rfty/",
             whatsapp: "https://wa.me/+8801774842333"
+        }
+    },
+    {
+        id: "38",
+        studentId: "2400060",
+        name: "Md. Rakibul Hasan Rabbi",
+        highSchool: "Pabna Zilla School, Pabna",
+        college: "Rajshahi College, Rajshahi",
+        hometown: "Pabna",
+        avatarUrl: "https://i.pravatar.cc/300?img=42",
+        socials: {
+            facebook: "https://www.facebook.com/rakibulhasan.rabby.3154",
+            whatsapp: "https://wa.me/+8801819796606"
         }
     }
 ];
