@@ -17,10 +17,23 @@ export interface Student {
 
 export const students: Student[] = [
     {
+        id: "39",
+        studentId: "2400002",
+        name: "Mst. Jannatul Mauya",
+        highSchool: "Durgapur Girls' High School, Rajshahi",
+        college: "Rajshahi Govt. City College, Rajshahi",
+        hometown: "Rajshahi",
+        avatarUrl: "/students/default-avatar.svg",
+        socials: {
+            facebook: "https://www.facebook.com/jan.mauya",
+            whatsapp: "https://wa.me/+8801733793249"
+        }
+    },
+    {
         id: "29",
         studentId: "2400003",
         name: "Shah Kudrot-E-Alam Kabbo",
-        highSchool: "Ideal School & College, Gaibandha",
+        highSchool: "Ideal School & College, Motijheel, Dhaka",
         college: "Notre Dame College, Dhaka",
         hometown: "Gaibandha",
         avatarUrl: "/students/default-avatar.svg",
@@ -47,7 +60,7 @@ export const students: Student[] = [
         id: "30",
         studentId: "2400006",
         name: "Shadman Hossen",
-        highSchool: "Sena Public School & College, Savar",
+        highSchool: "Sena Public School & College, Savar, Dhaka",
         college: "Savar Cantonment Public School & College, Dhaka",
         hometown: "Savar, Dhaka",
         avatarUrl: "/students/default-avatar.svg",
@@ -60,7 +73,7 @@ export const students: Student[] = [
         id: "2",
         studentId: "2400007",
         name: "Md. Jahid Hasan",
-        highSchool: "Bishnu Prashad Government High School, Panchagarh",
+        highSchool: "Bishnu Prashad Govt High School, Panchagarh",
         college: "Rangpur Govt. College, Rangpur",
         hometown: "Panchagarh",
         avatarUrl: "/students/Photos/2400007.jpg",
@@ -86,7 +99,7 @@ export const students: Student[] = [
         id: "31",
         studentId: "2400009",
         name: "Nayem Ahmed",
-        highSchool: "Collectorate Public School, Dhaka",
+        highSchool: "Collectorate Public School and College, Dhaka",
         college: "BAF Shaheen College, Dhaka",
         hometown: "Dhaka",
         avatarUrl: "/students/default-avatar.svg",
@@ -109,10 +122,23 @@ export const students: Student[] = [
         }
     },
     {
+        id: "40",
+        studentId: "2400011",
+        name: "Maliha Enteha",
+        highSchool: "Govt. Laboratory High School, Khulna",
+        college: "Govt. M.M. City College, Khulna",
+        hometown: "Khulna",
+        avatarUrl: "/students/default-avatar.svg",
+        socials: {
+            facebook: "https://www.facebook.com/share/17obqDxSLQ/",
+            whatsapp: "https://wa.me/+8801949292587"
+        }
+    },
+    {
         id: "4",
         studentId: "2400012",
         name: "Rezuana Karim",
-        highSchool: "Government PN Girl's High school Rajshahi",
+        highSchool: "Govt PN Girl's High school, Rajshahi",
         college: "Rajshahi College",
         hometown: "Rajshahi",
         avatarUrl: "/students/Photos/2400012.jpg",
@@ -138,8 +164,8 @@ export const students: Student[] = [
         id: "6",
         studentId: "2400014",
         name: "Md Ahchanul Hoque Milon",
-        highSchool: "Birol Residential Public School, Birol, Dinajpur",
-        college: "Dinajpur Government City College, Dinajpur",
+        highSchool: "Birol Residential Public School, Dinajpur",
+        college: "Dinajpur Govt City College, Dinajpur",
         hometown: "Birol, Dinajpur",
         avatarUrl: "/students/Photos/2400014.jpg",
         socials: {
@@ -151,7 +177,7 @@ export const students: Student[] = [
         id: "7",
         studentId: "2400015",
         name: "Tahlil Islam Rafi",
-        highSchool: "Bindubasini govt boys high school, Tangail",
+        highSchool: "Bindubasini Govt Boys High School, Tangail",
         college: "Notre Dame college, Dhaka",
         hometown: "Tangail",
         avatarUrl: "/students/Photos/2400015.png",
@@ -177,12 +203,25 @@ export const students: Student[] = [
         studentId: "2400019",
         name: "Sajjadur Rahman",
         highSchool: "Harinarayonpur Union High School, Noakhali",
-        college: "Noakhali Govt College, Noakhali",
-        hometown: "Noakhali",
+        college: "Noakhali Government College, Noakhali",
+        hometown: "Maijdee, Noakhali",
         avatarUrl: "/students/default-avatar.svg",
         socials: {
             facebook: "https://www.facebook.com/share/18ASDoMhzS/",
             whatsapp: "https://wa.me/+8801762073203"
+        }
+    },
+    {
+        id: "41",
+        studentId: "2400020",
+        name: "Md. Ruhul Amin Rasel",
+        highSchool: "North Point School and College, Thakurgaon",
+        college: "Pirganj Govt College, Thakurgaon",
+        hometown: "Pirganj, Thakurgaon",
+        avatarUrl: "/students/default-avatar.svg",
+        socials: {
+            facebook: "https://www.facebook.com/mdruhulaminrasel122",
+            whatsapp: "https://wa.me/+8801865515233"
         }
     },
     {
@@ -202,9 +241,9 @@ export const students: Student[] = [
         id: "34",
         studentId: "2400022",
         name: "Md. Mahmudul Amin Limon",
-        highSchool: "Saidpur Govt Science High School, Nilphamari",
+        highSchool: "Saidpur Govt Science College, Nilphamari",
         college: "Saidpur Govt Science College, Nilphamari",
-        hometown: "Nilphamari",
+        hometown: "Saidpur, Nilphamari",
         avatarUrl: "/students/default-avatar.svg",
         socials: {
             facebook: "https://www.facebook.com/share/14WrPZYwPFY/",
@@ -215,7 +254,7 @@ export const students: Student[] = [
         id: "8",
         studentId: "2400023",
         name: "Ashfi Ul Haque Aronno",
-        highSchool: "Bright Model School and College, Alamdanga",
+        highSchool: "Bright Model School & College, Alamdanga",
         college: "Kushtia Government College, Kushtia",
         hometown: "Chuadanga",
         avatarUrl: "/students/Photos/2400023.jpg",
@@ -254,7 +293,7 @@ export const students: Student[] = [
         id: "35",
         studentId: "2400027",
         name: "MD. Akib Rahman",
-        highSchool: "Gangni Pilot High School, Kushtia",
+        highSchool: "Gangni Pilot High School, Meherpur",
         college: "Kushtia Govt College, Kushtia",
         hometown: "Kushtia",
         avatarUrl: "/students/default-avatar.svg",
@@ -268,7 +307,7 @@ export const students: Student[] = [
         studentId: "2400028",
         name: "Md. Abdul Hasib",
         highSchool: "Palsha High School, Chapainawabganj",
-        college: "Nawabganj Govt. College , Chapainawabganj",
+        college: "Nawabganj Govt. College, Chapainawabganj",
         hometown: "Chapainawabganj",
         avatarUrl: "/students/default-avatar.svg",
         socials: {
@@ -277,10 +316,23 @@ export const students: Student[] = [
         }
     },
     {
+        id: "42",
+        studentId: "2400029",
+        name: "Mahdi Hasan",
+        highSchool: "Mymensingh Zilla School, Mymensingh",
+        college: "Anandamohan College, Mymensingh",
+        hometown: "Mymensingh",
+        avatarUrl: "/students/default-avatar.svg",
+        socials: {
+            facebook: "https://www.facebook.com/share/18CtfB7LWh/",
+            whatsapp: "https://wa.me/+8801926628961"
+        }
+    },
+    {
         id: "36",
         studentId: "2400030",
         name: "S.M. Wahidur Rahman",
-        highSchool: "Monipur High School, Dhaka",
+        highSchool: "Monipur High School and College, Dhaka",
         college: "Mirpur Cantonment Public School & College, Dhaka",
         hometown: "Kushtia",
         avatarUrl: "/students/default-avatar.svg",
@@ -294,7 +346,7 @@ export const students: Student[] = [
         studentId: "2400031",
         name: "Fahim Hasan Fahad",
         highSchool: "Police Lines Adarsha High School, Tangail",
-        college: "Major Gen. Mahmudul Hasan College, Tangail",
+        college: "Major Gen. M. Hasan Adarsha College, Tangail",
         hometown: "Tangail",
         avatarUrl: "/students/default-avatar.svg",
         socials: {
@@ -320,7 +372,7 @@ export const students: Student[] = [
         studentId: "2400037",
         name: "Nazia Afrida Pollobe",
         highSchool: "Masjid Mission Academy, Rajshahi",
-        college: "Rajshahi Governmet City College Rajshahi",
+        college: "Rajshahi Govt City College, Rajshahi",
         hometown: "Rajshahi",
         avatarUrl: "/students/Photos/2400037.jpeg",
         socials: {
@@ -394,6 +446,19 @@ export const students: Student[] = [
         }
     },
     {
+        id: "43",
+        studentId: "2400044",
+        name: "Zihad Joy",
+        highSchool: "Dhanmondi Govt. Boys' High School, Dhaka",
+        college: "Govt. Science College, Tejgaon, Dhaka",
+        hometown: "Barishal",
+        avatarUrl: "/students/default-avatar.svg",
+        socials: {
+            facebook: "https://www.facebook.com/sm.joy.official",
+            whatsapp: "https://wa.me/+8801963834823"
+        }
+    },
+    {
         id: "14",
         studentId: "2400045",
         name: "Md. Abdul Kader (Wachi)",
@@ -464,7 +529,7 @@ export const students: Student[] = [
         studentId: "2400054",
         name: "Md. Abdullah Al Rafi",
         highSchool: "Lion's school and College, Saidpur",
-        college: "Cantonment public school and College, Saidpur",
+        college: "Cantonment public school & College, Saidpur",
         hometown: "Nilphamari",
         avatarUrl: "/students/Photos/2400054.jpg",
         socials: {
@@ -477,12 +542,25 @@ export const students: Student[] = [
         studentId: "2400055",
         name: "Sanzid Suchok",
         highSchool: "Alhera Academy school and college, Pabna",
-        college: "GOVT.EDWARD COLLEGE PABNA",
+        college: "GOVT. EDWARD COLLEGE PABNA",
         hometown: "Pabna",
         avatarUrl: "/students/Photos/2400055.jpg",
         socials: {
             facebook: "https://www.facebook.com/share/1DxxpyhWGC/",
             whatsapp: "https://wa.me/+8801318843058"
+        }
+    },
+    {
+        id: "44",
+        studentId: "2400056",
+        name: "Meherin Momta BornoMala",
+        highSchool: "Pabna Govt. Girls High School, Pabna",
+        college: "Pabna Govt. Women College, Pabna",
+        hometown: "Pabna",
+        avatarUrl: "/students/default-avatar.svg",
+        socials: {
+            facebook: "https://www.facebook.com/share/14ViHC8xwhN/",
+            whatsapp: "https://wa.me/+8801973423552"
         }
     },
     {
