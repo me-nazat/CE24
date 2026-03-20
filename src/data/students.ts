@@ -1,6 +1,7 @@
 export interface SocialLinks {
     facebook?: string;
     whatsapp?: string;
+    phone?: string;
 }
 
 export interface Student {
@@ -26,7 +27,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400002.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/jan.mauya",
-            "whatsapp": "https://wa.me/+8801733793249"
+            "whatsapp": "https://wa.me/+8801733793249",
+            "phone": "01733793249"
         }
     },
     {
@@ -39,7 +41,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400003.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/17c9hdPcKB/",
-            "whatsapp": "https://wa.me/+8801824383707"
+            "whatsapp": "https://wa.me/+8801824383707",
+            "phone": "01824383707"
         }
     },
     {
@@ -52,7 +55,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400005.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/189HtFgzis/",
-            "whatsapp": "https://wa.me/+8801713783569"
+            "whatsapp": "https://wa.me/+8801713783569",
+            "phone": "01713783569"
         },
         "isRep": true
     },
@@ -63,10 +67,11 @@ export const students: Student[] = [
         "hometown": "Savar, Dhaka",
         "highSchool": "Sena Public School & College",
         "college": "Savar Cantonment Public",
-        "avatarUrl": "/students/Photos/2400006.jpg",
+        "avatarUrl": "/students/Photos/2400006.jpeg",
         "socials": {
             "facebook": "https://www.facebook.com/share/14ZAU9nHZWr/",
-            "whatsapp": "https://wa.me/+8801779444659"
+            "whatsapp": "https://wa.me/+8801779444659",
+            "phone": "01779444659"
         }
     },
     {
@@ -79,7 +84,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400007.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1BLr74A8Fq/",
-            "whatsapp": "https://wa.me/+8801518906931"
+            "whatsapp": "https://wa.me/+8801518906931",
+            "phone": "01518906931"
         }
     },
     {
@@ -89,10 +95,11 @@ export const students: Student[] = [
         "hometown": "Dhaka",
         "highSchool": "Rajuk Uttara Model College",
         "college": "Rajuk Uttara Model College",
-        "avatarUrl": "/students/Photos/2400008.jpg",
+        "avatarUrl": "/students/Photos/2400008.heic",
         "socials": {
             "facebook": "https://www.facebook.com/share/1CNYsDGze3/",
-            "whatsapp": "https://wa.me/+8801303404386"
+            "whatsapp": "https://wa.me/+8801303404386",
+            "phone": "01303404386"
         }
     },
     {
@@ -105,7 +112,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400009.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/iyowosadat",
-            "whatsapp": "https://wa.me/+8801842021677"
+            "whatsapp": "https://wa.me/+8801842021677",
+            "phone": "01842021677"
         }
     },
     {
@@ -118,7 +126,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400010.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/avenue.rtc",
-            "whatsapp": "https://wa.me/+8801917261207"
+            "whatsapp": "https://wa.me/+8801917261207",
+            "phone": "01917261207"
         }
     },
     {
@@ -130,7 +139,8 @@ export const students: Student[] = [
         "college": "Govt. M.M. City College",
         "avatarUrl": "/students/default-avatar.svg",
         "socials": {
-            "facebook": "https://www.facebook.com/share/17obqDxSLQ/"
+            "facebook": "https://www.facebook.com/share/17obqDxSLQ/",
+            "phone": "01949-292587"
         }
     },
     {
@@ -143,7 +153,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400012.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1CABBPZmVr/",
-            "whatsapp": "https://wa.me/+8801798009676"
+            "whatsapp": "https://wa.me/+8801798009676",
+            "phone": "01798009676"
         }
     },
     {
@@ -156,7 +167,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400013.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/17vsAyMRd8/",
-            "whatsapp": "https://wa.me/+8801609563324"
+            "whatsapp": "https://wa.me/+8801609563324",
+            "phone": "01609563324"
         }
     },
     {
@@ -169,7 +181,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400014.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1CDrCp7W5z/",
-            "whatsapp": "https://wa.me/+8801731454408"
+            "whatsapp": "https://wa.me/+8801731454408",
+            "phone": "01731454408"
         }
     },
     {
@@ -181,7 +194,8 @@ export const students: Student[] = [
         "college": "Notre Dame College",
         "avatarUrl": "/students/Photos/2400015.png",
         "socials": {
-            "whatsapp": "https://wa.me/+8801741553760"
+            "whatsapp": "https://wa.me/+8801741553760",
+            "phone": "01741553760"
         }
     },
     {
@@ -193,7 +207,8 @@ export const students: Student[] = [
         "college": "Munshi Manik Mia Degree College",
         "avatarUrl": "/students/Photos/2400016.jpg",
         "socials": {
-            "facebook": "https://www.facebook.com/share/174Dh2E9u8/"
+            "facebook": "https://www.facebook.com/share/174Dh2E9u8/",
+            "phone": "01843528236"
         }
     },
     {
@@ -206,7 +221,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400017.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1C3D3MY796/",
-            "whatsapp": "https://wa.me/+8801608512988"
+            "whatsapp": "https://wa.me/+8801608512988",
+            "phone": "01608512988"
         }
     },
     {
@@ -219,7 +235,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400018.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/jawad.sharaf.725390",
-            "whatsapp": "https://wa.me/qr/KP5DNHHFOFKQJ1"
+            "whatsapp": "https://wa.me/qr/KP5DNHHFOFKQJ1",
+            "phone": "01550674256"
         }
     },
     {
@@ -232,7 +249,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400019.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/18ASDoMhzS/",
-            "whatsapp": "https://wa.me/qr/EHKOFFHR47IYK1"
+            "whatsapp": "https://wa.me/qr/EHKOFFHR47IYK1",
+            "phone": "01762073203"
         }
     },
     {
@@ -244,7 +262,8 @@ export const students: Student[] = [
         "college": "Pirganj Govt College",
         "avatarUrl": "/students/default-avatar.svg",
         "socials": {
-            "facebook": "https://www.facebook.com/mdruhulaminrasel122"
+            "facebook": "https://www.facebook.com/mdruhulaminrasel122",
+            "phone": "01865515233"
         }
     },
     {
@@ -257,7 +276,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400021.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1FZ92sTaFc/",
-            "whatsapp": "https://wa.me/+8801792675402"
+            "whatsapp": "https://wa.me/+8801792675402",
+            "phone": "01792675402"
         }
     },
     {
@@ -270,7 +290,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400022.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/14WrPZYwPFY/",
-            "whatsapp": "https://wa.me/+8801865503412"
+            "whatsapp": "https://wa.me/+8801865503412",
+            "phone": "01865503412"
         }
     },
     {
@@ -283,7 +304,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400023.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1DezTEZGoe/",
-            "whatsapp": "https://wa.me/+8801760000970"
+            "whatsapp": "https://wa.me/+8801760000970",
+            "phone": "01760000970"
         }
     },
     {
@@ -296,7 +318,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400024.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/al.mahamud.nobin",
-            "whatsapp": "https://wa.me/+8801892510933"
+            "whatsapp": "https://wa.me/+8801892510933",
+            "phone": "01892510933"
         }
     },
     {
@@ -309,7 +332,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400026.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/pranto7m",
-            "whatsapp": "https://wa.me/+8801764604553"
+            "whatsapp": "https://wa.me/+8801764604553",
+            "phone": "01764604553"
         }
     },
     {
@@ -322,7 +346,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400027.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1G42UJKhfZ/",
-            "whatsapp": "https://wa.me/qr/LQLHG4XLAVAEA1"
+            "whatsapp": "https://wa.me/qr/LQLHG4XLAVAEA1",
+            "phone": "01762775198"
         }
     },
     {
@@ -335,7 +360,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400028.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1a45jr8ifn/",
-            "whatsapp": "https://wa.me/+8801774778312"
+            "whatsapp": "https://wa.me/+8801774778312",
+            "phone": "01774778312"
         }
     },
     {
@@ -348,7 +374,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400029.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/18CtfB7LWh/",
-            "whatsapp": "https://wa.me/+8801926628961"
+            "whatsapp": "https://wa.me/+8801926628961",
+            "phone": "01926628961"
         }
     },
     {
@@ -361,7 +388,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400030.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1B7x5CCGoP/",
-            "whatsapp": "https://wa.me/+8801736156343"
+            "whatsapp": "https://wa.me/+8801736156343",
+            "phone": "01736156343"
         }
     },
     {
@@ -374,7 +402,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400031.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1AxKDNFhuh/",
-            "whatsapp": "https://wa.me/+8801331501055"
+            "whatsapp": "https://wa.me/+8801331501055",
+            "phone": "01331501055"
         }
     },
     {
@@ -387,7 +416,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400032.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/16n8JUADwp/",
-            "whatsapp": "https://wa.me/+8801752633428"
+            "whatsapp": "https://wa.me/+8801752633428",
+            "phone": "01752633428"
         }
     },
     {
@@ -400,11 +430,26 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400033.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1GwroBwpnK/",
-            "whatsapp": "https://wa.me/qr/RREQBLQSUBHRA1"
+            "whatsapp": "https://wa.me/qr/RREQBLQSUBHRA1",
+            "phone": "01581570404"
         }
     },
     {
         "id": "31",
+        "studentId": "2400034",
+        "name": "Md. Mehedi Hasan Bappi",
+        "hometown": "Kushtia",
+        "highSchool": "Aruapara Secondary Girl'S School",
+        "college": "Kushtia Govt College",
+        "avatarUrl": "/students/default-avatar.svg",
+        "socials": {
+            "facebook": "https://www.facebook.com/13appi124",
+            "whatsapp": "https://wa.me/+01989069695",
+            "phone": "01989069695"
+        }
+    },
+    {
+        "id": "32",
         "studentId": "2400036",
         "name": "md.Jayed Hasan",
         "hometown": "Barishal",
@@ -413,24 +458,26 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400036.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1C1SQM9uAb/",
-            "whatsapp": "https://wa.me/+8801776248949"
+            "whatsapp": "https://wa.me/+8801776248949",
+            "phone": "01776248949"
         }
     },
     {
-        "id": "32",
+        "id": "33",
         "studentId": "2400037",
         "name": "Nazia Afrida Pollobe",
         "hometown": "Rajshahi",
         "highSchool": "Masjid Mission Academy",
         "college": "Rajshahi Govt City College",
-        "avatarUrl": "/students/Photos/2400037.jpg",
+        "avatarUrl": "/students/Photos/2400037.jpeg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1bgeS7tmR1/",
-            "whatsapp": "https://wa.me/+8801341814153"
+            "whatsapp": "https://wa.me/+8801341814153",
+            "phone": "01341814153"
         }
     },
     {
-        "id": "33",
+        "id": "34",
         "studentId": "2400038",
         "name": "Md Ariful Islam",
         "hometown": "Pabna",
@@ -439,11 +486,12 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400038.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/abedin.arifin.5",
-            "whatsapp": "https://wa.me/+8801621908125"
+            "whatsapp": "https://wa.me/+8801621908125",
+            "phone": "01621908125"
         }
     },
     {
-        "id": "34",
+        "id": "35",
         "studentId": "2400039",
         "name": "Md Adil",
         "hometown": "Sirajganj",
@@ -452,11 +500,12 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400039.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1E3KpfT6V8/",
-            "whatsapp": "https://wa.me/+8801752406634"
+            "whatsapp": "https://wa.me/+8801752406634",
+            "phone": "01752406634"
         }
     },
     {
-        "id": "35",
+        "id": "36",
         "studentId": "2400040",
         "name": "Md. Ibrahim Hosen",
         "hometown": "Cumilla",
@@ -465,11 +514,26 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400040.png",
         "socials": {
             "facebook": "https://www.facebook.com/share/17PwfXBkyR/",
-            "whatsapp": "https://wa.me/+8801728760650"
+            "whatsapp": "https://wa.me/+8801728760650",
+            "phone": "01728760650"
         }
     },
     {
-        "id": "36",
+        "id": "37",
+        "studentId": "2400041",
+        "name": "Mst. Afia Mubasshira",
+        "hometown": "Bogura",
+        "highSchool": "Bogura Cantonment Public",
+        "college": "Govt. Mujibur Rahman Women's College",
+        "avatarUrl": "/students/Photos/2400041.jpeg",
+        "socials": {
+            "facebook": "https://www.facebook.com/profile.php?id=100092288012675&mibextid=ZbWKwL",
+            "whatsapp": "https://wa.me/+8801865913490",
+            "phone": "01865913490"
+        }
+    },
+    {
+        "id": "38",
         "studentId": "2400042",
         "name": "Rauf Hossain Roddro",
         "hometown": "Gaibandha",
@@ -478,11 +542,12 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400042.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1C86u3iAta/",
-            "whatsapp": "https://wa.me/+8801998630526"
+            "whatsapp": "https://wa.me/+8801998630526",
+            "phone": "01998630526"
         }
     },
     {
-        "id": "37",
+        "id": "39",
         "studentId": "2400043",
         "name": "Sanzida Rafat Lam-yea",
         "hometown": "Pabna",
@@ -491,11 +556,12 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400043.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1C2gLJj5EV/",
-            "whatsapp": "https://wa.me/+8801728771200"
+            "whatsapp": "https://wa.me/+8801728771200",
+            "phone": "01728771200"
         }
     },
     {
-        "id": "38",
+        "id": "40",
         "studentId": "2400044",
         "name": "Zihad Joy",
         "hometown": "Barishal",
@@ -504,11 +570,12 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400044.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/sm.joy.official",
-            "whatsapp": "https://wa.me/+8801963834823"
+            "whatsapp": "https://wa.me/+8801963834823",
+            "phone": "01963834823"
         }
     },
     {
-        "id": "39",
+        "id": "41",
         "studentId": "2400045",
         "name": "Md. Abdul Kader (Wachi)",
         "hometown": "Bogura",
@@ -517,11 +584,12 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400045.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/mabdulkader339",
-            "whatsapp": "https://wa.me/+8801787199778"
+            "whatsapp": "https://wa.me/+8801787199778",
+            "phone": "01787199778"
         }
     },
     {
-        "id": "40",
+        "id": "42",
         "studentId": "2400046",
         "name": "Md. Musabbir Hossain Munna",
         "hometown": "Dinajpur",
@@ -530,11 +598,12 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400046.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/musabbirhossain06",
-            "whatsapp": "https://wa.me/+8801336155081"
+            "whatsapp": "https://wa.me/+8801336155081",
+            "phone": "01336155081"
         }
     },
     {
-        "id": "41",
+        "id": "43",
         "studentId": "2400047",
         "name": "Borkat Ullah ( Bihon )",
         "hometown": "Narsingdi",
@@ -542,11 +611,12 @@ export const students: Student[] = [
         "college": "Narsingdi Govt. College",
         "avatarUrl": "/students/Photos/2400047.png",
         "socials": {
-            "facebook": "https://www.facebook.com/share/1HKaFuSp2K/"
+            "facebook": "https://www.facebook.com/share/1HKaFuSp2K/",
+            "phone": "01572932462"
         }
     },
     {
-        "id": "42",
+        "id": "44",
         "studentId": "2400048",
         "name": "Md. Shakib Uzzaman Siam",
         "hometown": "Naogaon",
@@ -555,12 +625,13 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400048.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/ShakibSiam6345",
-            "whatsapp": "https://wa.me/+8801763456814"
+            "whatsapp": "https://wa.me/+8801763456814",
+            "phone": "01763456814"
         },
         "isRep": true
     },
     {
-        "id": "43",
+        "id": "45",
         "studentId": "2400049",
         "name": "Md Mahadi Fayaz Bhuiyan",
         "hometown": "Cumilla",
@@ -568,11 +639,12 @@ export const students: Student[] = [
         "college": "Notre Dame College",
         "avatarUrl": "/students/default-avatar.svg",
         "socials": {
-            "facebook": "https://www.facebook.com/share/1CZqt34V82/"
+            "facebook": "https://www.facebook.com/share/1CZqt34V82/",
+            "phone": "01859858464"
         }
     },
     {
-        "id": "44",
+        "id": "46",
         "studentId": "2400050",
         "name": "Aminul Alam Ifaz",
         "hometown": "Barishal",
@@ -581,11 +653,12 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400050.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1AcBJ79Sd8/",
-            "whatsapp": "https://wa.me/+8801318372213"
+            "whatsapp": "https://wa.me/+8801318372213",
+            "phone": "01318372213"
         }
     },
     {
-        "id": "45",
+        "id": "47",
         "studentId": "2400051",
         "name": "Jarin Shubha Zaman",
         "hometown": "Rajshahi",
@@ -594,11 +667,12 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400051.png",
         "socials": {
             "facebook": "https://www.facebook.com/share/1E8Y5WmDWe/",
-            "whatsapp": "https://wa.me/+8801726618550"
+            "whatsapp": "https://wa.me/+8801726618550",
+            "phone": "01726618550"
         }
     },
     {
-        "id": "46",
+        "id": "48",
         "studentId": "2400052",
         "name": "Md. Ariyan",
         "hometown": "Dhaka",
@@ -607,11 +681,12 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400052.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1JCT6axvgM/",
-            "whatsapp": "https://wa.me/8801642972428"
+            "whatsapp": "https://wa.me/8801642972428",
+            "phone": "01642972428"
         }
     },
     {
-        "id": "47",
+        "id": "49",
         "studentId": "2400053",
         "name": "Shahriar Alom Rifat",
         "hometown": "Rajshahi",
@@ -620,11 +695,12 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400053.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1FPjT4ZT6x/",
-            "whatsapp": "https://wa.me/+8801718512067"
+            "whatsapp": "https://wa.me/+8801718512067",
+            "phone": "01718512067"
         }
     },
     {
-        "id": "48",
+        "id": "50",
         "studentId": "2400054",
         "name": "Md. Abdullah Al Rafi",
         "hometown": "Nilphamari",
@@ -633,11 +709,12 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400054.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1AekxXVoaF/",
-            "whatsapp": "https://wa.me/+8801768876336"
+            "whatsapp": "https://wa.me/+8801768876336",
+            "phone": "01768876336"
         }
     },
     {
-        "id": "49",
+        "id": "51",
         "studentId": "2400055",
         "name": "Sanzid Suchok",
         "hometown": "Pabna",
@@ -646,11 +723,12 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400055.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1DxxpyhWGC/",
-            "whatsapp": "https://wa.me/+8801318843058"
+            "whatsapp": "https://wa.me/+8801318843058",
+            "phone": "01318843058"
         }
     },
     {
-        "id": "50",
+        "id": "52",
         "studentId": "2400056",
         "name": "Meherin Momta BornoMala",
         "hometown": "Pabna",
@@ -659,11 +737,12 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400056.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/14ViHC8xwhN/",
-            "whatsapp": "https://wa.me/+8801973423552"
+            "whatsapp": "https://wa.me/+8801973423552",
+            "phone": "01973423552"
         }
     },
     {
-        "id": "51",
+        "id": "53",
         "studentId": "2400057",
         "name": "Sanjida Amin Preety",
         "hometown": "Sylhet",
@@ -672,11 +751,12 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400057.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1CNR94rfty/",
-            "whatsapp": "https://wa.me/+8801774842333"
+            "whatsapp": "https://wa.me/+8801774842333",
+            "phone": "01774842333"
         }
     },
     {
-        "id": "52",
+        "id": "54",
         "studentId": "2400059",
         "name": "Iftekhar Hussen Saikat",
         "hometown": "Moulvibazar",
@@ -685,11 +765,12 @@ export const students: Student[] = [
         "avatarUrl": "/students/default-avatar.svg",
         "socials": {
             "facebook": "https://www.facebook.com/share/18JdZwBNq2/",
-            "whatsapp": "https://wa.me/qr/C4XXQRGUUKWNO1"
+            "whatsapp": "https://wa.me/qr/C4XXQRGUUKWNO1",
+            "phone": "01784274234"
         }
     },
     {
-        "id": "53",
+        "id": "55",
         "studentId": "2400060",
         "name": "Md. Rakibul Hasan Rabbi",
         "hometown": "Pabna",
@@ -698,7 +779,8 @@ export const students: Student[] = [
         "avatarUrl": "/students/Photos/2400060.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/rakibulhasan.rabby.3154",
-            "whatsapp": "https://wa.me/+8801819796606"
+            "whatsapp": "https://wa.me/+8801819796606",
+            "phone": "01819796606"
         }
     }
 ];
