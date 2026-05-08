@@ -54,7 +54,7 @@ export default function Home() {
     <main className="min-h-screen flex flex-col items-center" style={{ background: "var(--bg-primary)" }}>
       <HeroSection />
 
-      <div className="w-full relative -mt-6 z-20">
+      <div className="w-full relative -mt-12 md:-mt-16 z-20">
         <SearchBar
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}

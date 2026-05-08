@@ -139,21 +139,21 @@ export default function HeroSection() {
             <Particles />
 
             {/* Content */}
-            <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center pt-28 md:pt-36 pb-24">
+            <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center pt-16 md:pt-20 pb-24">
                 {/* Logo */}
                 <motion.div
                     variants={fadeUp}
                     initial="hidden"
                     animate="visible"
                     custom={0}
-                    className="relative mb-10"
+                    className="relative mb-5"
                 >
-                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl glass flex items-center justify-center float-slow shadow-[0_0_50px_rgba(108,99,255,0.12)]">
-                        <span className="text-2xl md:text-3xl font-heading font-extrabold text-gradient tracking-[0.12em]">
+                    <div className="w-24 h-20 md:w-32 md:h-24 rounded-3xl glass flex items-center justify-center float-slow shadow-[0_0_50px_rgba(108,99,255,0.15)]">
+                        <span className="text-3xl md:text-4xl font-heading font-extrabold text-gradient tracking-[0.12em]">
                             CE
                         </span>
                     </div>
-                    <div className="absolute -inset-2.5 rounded-[18px] border border-accent/10 pulse-ring pointer-events-none" />
+                    <div className="absolute -inset-3 rounded-[28px] border border-accent/20 pulse-ring pointer-events-none" />
                 </motion.div>
 
                 {/* Title */}
@@ -188,18 +188,18 @@ export default function HeroSection() {
                     custom={0.36}
                     className="flex flex-wrap items-center justify-center gap-3 lg:gap-4 mt-2"
                 >
-                    <div className="glass backdrop-blur-xl bg-[rgba(255,255,255,0.08)] border border-white/10 rounded-full px-5 lg:px-6 py-2.5 lg:py-3 flex items-center gap-3 glow-accent">
-                        <span className="text-sm lg:text-base font-heading font-semibold tracking-wide text-white">
+                    <div className="glass backdrop-blur-2xl bg-[rgba(255,255,255,0.15)] border border-white/20 rounded-full px-5 lg:px-6 py-2.5 lg:py-3 flex items-center gap-3 glow-accent shadow-lg">
+                        <span className="text-sm lg:text-base font-heading font-bold tracking-wide text-white drop-shadow-md">
                             Series &apos;24
                         </span>
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent pulse-ring" />
-                        <span className="text-sm lg:text-base font-heading font-semibold tracking-wide text-white">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent pulse-ring shadow-lg" />
+                        <span className="text-sm lg:text-base font-heading font-bold tracking-wide text-white drop-shadow-md">
                             Section A
                         </span>
                     </div>
-                    <div className="glass backdrop-blur-xl bg-[rgba(255,255,255,0.08)] border border-white/10 rounded-full px-5 lg:px-6 py-2.5 lg:py-3 flex items-center gap-2.5">
-                        <Users className="w-4 h-4 lg:w-5 lg:h-5 text-accent-bright" />
-                        <span className="text-sm lg:text-base font-heading font-semibold text-white">
+                    <div className="glass backdrop-blur-2xl bg-[rgba(255,255,255,0.15)] border border-white/20 rounded-full px-5 lg:px-6 py-2.5 lg:py-3 flex items-center gap-2.5 shadow-lg">
+                        <Users className="w-4 h-4 lg:w-5 lg:h-5 text-accent-bright drop-shadow-md" />
+                        <span className="text-sm lg:text-base font-heading font-bold text-white drop-shadow-md">
                             {total} Students
                         </span>
                     </div>
