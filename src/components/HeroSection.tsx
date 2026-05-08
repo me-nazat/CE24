@@ -128,7 +128,7 @@ export default function HeroSection() {
                     unoptimized
                     quality={75}
                     sizes="100vw"
-                    className="object-cover object-center"
+                    className="object-cover object-[center_20%]"
                 />
                 {/* Cinematic overlays */}
                 <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-primary)]/75 via-[var(--bg-primary)]/45 to-[var(--bg-primary)] z-[1]" />

@@ -24,7 +24,7 @@ export const students: Student[] = [
         "hometown": "Unknown",
         "highSchool": "Unknown",
         "college": "Unknown",
-        "avatarUrl": "/students/default-avatar.svg",
+        "avatarUrl": "/students/Photos/2400001.jpg",
         "socials": {
 
         }
@@ -50,7 +50,7 @@ export const students: Student[] = [
         "hometown": "Gaibandha",
         "highSchool": "Ideal School & College",
         "college": "Notre Dame College",
-        "avatarUrl": "/students/Photos/2400003.webp",
+        "avatarUrl": "/students/Photos/2400003.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/17c9hdPcKB/",
             "whatsapp": "https://wa.me/+8801824383707",
@@ -119,7 +119,7 @@ export const students: Student[] = [
         "hometown": "Dhaka",
         "highSchool": "Rajuk Uttara Model College",
         "college": "Rajuk Uttara Model College",
-        "avatarUrl": "/students/Photos/2400008.HEIC",
+        "avatarUrl": "/students/Photos/2400008.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1CNYsDGze3/",
             "whatsapp": "https://wa.me/+8801805132261",

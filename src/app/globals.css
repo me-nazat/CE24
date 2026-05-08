@@ -7,10 +7,10 @@
 
 :root {
   color-scheme: dark;
-  --bg-primary: #0a1128;
-  --bg-elevated: #0f172a;
-  --bg-card: #0f172a;
-  --bg-card-hover: #1e293b;
+  --bg-primary: #050a1a;
+  --bg-elevated: #0a1024;
+  --bg-card: #0a1024;
+  --bg-card-hover: #131c3b;
   --surface-glass: rgba(255, 255, 255, 0.035);
   --surface-glass-hover: rgba(255, 255, 255, 0.06);
   --border-subtle: rgba(255, 255, 255, 0.06);

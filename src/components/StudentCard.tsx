@@ -27,7 +27,7 @@ export default function StudentCard({ student }: StudentCardProps) {
             onClick={handleFlip}
         >
             <div
-                className={`w-full h-full transition-transform duration-[700ms] ease-[cubic-bezier(0.23,1,0.32,1)] preserve-3d cursor-pointer will-change-transform ${isFlipped ? "rotate-y-180" : ""}`}
+                className={`w-full h-full transition-transform duration-[500ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] preserve-3d cursor-pointer will-change-transform ${isFlipped ? "rotate-y-180" : ""}`}
             >
                 {/* ── FRONT ── */}
                 <div

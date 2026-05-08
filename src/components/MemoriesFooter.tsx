@@ -7,33 +7,7 @@ import { Heart, Camera } from "lucide-react";
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 export default function MemoriesFooter() {
-    const images = [
-        {
-            src: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=60&w=800&auto=format&fit=crop",
-            alt: "Campus life moments",
-            span: "col-span-2 row-span-2",
-            height: "h-48 md:h-auto",
-        },
-        {
-            src: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=60&w=400&auto=format&fit=crop",
-            alt: "Graduation celebration",
-            span: "",
-            height: "h-48",
-        },
-        {
-            src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=60&w=400&auto=format&fit=crop",
-            alt: "Study sessions together",
-            span: "",
-            height: "h-48",
-        },
-        {
-            src: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=60&w=800&auto=format&fit=crop",
-            alt: "Classroom memories",
-            span: "col-span-2",
-            height: "h-48",
-        },
-    ];
-
+    // Single memory photo as requested
     return (
         <footer className="w-full pt-20 mt-16 relative overflow-hidden" style={{ borderTop: "1px solid var(--border-subtle)" }}>
             {/* Glow line */}
@@ -64,40 +38,35 @@ export default function MemoriesFooter() {
                     </p>
                 </motion.div>
 
-                {/* Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 md:gap-3">
-                    {images.map((img, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: 16 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: i * 0.08, ease }}
-                            className={`${img.span} relative ${img.height} rounded-xl overflow-hidden group cursor-pointer`}
-                        >
-                            <Image
-                                src={img.src}
-                                alt={img.alt}
-                                fill
-                                loading="lazy"
-                                quality={50}
-                                sizes={img.span?.includes("col-span-2") ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
-                                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                            />
-                            {/* Overlay */}
-                            <div className="absolute inset-0 transition-colors duration-500"
-                                style={{
-                                    background: "rgba(5,5,8,0.3)",
-                                }}
-                            />
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                                style={{
-                                    background: "linear-gradient(to top, rgba(5,5,8,0.5) 0%, transparent 50%)",
-                                }}
-                            />
-                        </motion.div>
-                    ))}
-                </div>
+                {/* Single Image Photo */}
+                <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, ease }}
+                    className="relative w-full h-[350px] md:h-[500px] rounded-[24px] overflow-hidden group cursor-pointer shadow-2xl"
+                >
+                    <Image
+                        src="https://i.ibb.co.com/qFXLSM9M/ce24-A-pic.jpg"
+                        alt="ce24-A-pic"
+                        fill
+                        unoptimized
+                        loading="lazy"
+                        quality={85}
+                        className="object-cover object-[center_35%] transition-transform duration-[800ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-[1.03]"
+                    />
+                    {/* Subtle Overlay */}
+                    <div className="absolute inset-0 transition-colors duration-500"
+                        style={{
+                            background: "rgba(5,5,8,0.15)",
+                        }}
+                    />
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        style={{
+                            background: "linear-gradient(to top, rgba(5,5,8,0.6) 0%, transparent 60%)",
+                        }}
+                    />
+                </motion.div>
             </div>
 
             {/* Bottom */}
