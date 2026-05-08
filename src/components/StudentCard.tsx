@@ -78,7 +78,7 @@ export default function StudentCard({ student }: StudentCardProps) {
                                 quality={60}
                                 loading="lazy"
                                 sizes="(max-width: 768px) 144px, 176px"
-                                className={`object-cover transition-all duration-500 ease-out group-hover:scale-[1.05] ${imgLoaded ? "opacity-100" : "opacity-0"}`}
+                                className={`object-cover transition-all duration-500 ease-out group-hover:scale-[1.05] ${imgLoaded ? "opacity-100" : "opacity-0"} ${student.studentId === "2400051" ? "rotate-90" : ""}`}
                                 onLoad={() => setImgLoaded(true)}
                             />
                         </div>

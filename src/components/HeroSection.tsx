@@ -128,10 +128,10 @@ export default function HeroSection() {
                     unoptimized
                     quality={75}
                     sizes="100vw"
-                    className="object-cover object-[center_20%]"
+                    className="object-contain md:object-cover object-[center_20%] opacity-50 md:opacity-100"
                 />
                 {/* Cinematic overlays */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-primary)]/75 via-[var(--bg-primary)]/45 to-[var(--bg-primary)] z-[1]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-primary)]/80 via-[var(--bg-primary)]/60 to-[var(--bg-primary)] md:from-[var(--bg-primary)]/75 md:via-[var(--bg-primary)]/45 md:to-[var(--bg-primary)] z-[1]" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg-primary)]/40 via-transparent to-[var(--bg-primary)]/40 z-[1]" />
                 <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[var(--bg-primary)] to-transparent z-[2]" />
             </div>
@@ -186,7 +186,7 @@ export default function HeroSection() {
                     initial="hidden"
                     animate="visible"
                     custom={0.36}
-                    className="flex flex-wrap items-center justify-center gap-3 lg:gap-4 mt-2"
+                    className="absolute bottom-20 md:static md:bottom-auto w-full left-0 px-4 flex flex-wrap items-center justify-center gap-3 lg:gap-4 md:mt-2 md:w-auto md:px-0"
                 >
                     <div className="glass backdrop-blur-2xl bg-[rgba(255,255,255,0.15)] border border-white/20 rounded-full px-5 lg:px-6 py-2.5 lg:py-3 flex items-center gap-3 glow-accent shadow-lg">
                         <span className="text-sm lg:text-base font-heading font-bold tracking-wide text-white drop-shadow-md">
@@ -210,7 +210,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.5, duration: 0.8 }}
-                    className="absolute bottom-6 left-1/2 -translate-x-1/2"
+                    className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex"
                 >
                     <button
                         onClick={() => document.getElementById("directory")?.scrollIntoView({ behavior: "smooth" })}
