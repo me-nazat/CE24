@@ -117,7 +117,7 @@ export default function HeroSection() {
     const total = 60;
 
     return (
-        <section className="relative w-full min-h-[80vh] md:min-h-[88vh] flex items-center justify-center overflow-hidden">
+        <section className="relative w-full min-h-[80vh] md:min-h-[88vh] flex items-start justify-center overflow-hidden">
             {/* BG Image */}
             <div className="absolute inset-0 z-0">
                 <Image
@@ -139,7 +139,7 @@ export default function HeroSection() {
             <Particles />
 
             {/* Content */}
-            <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center py-24 md:py-32">
+            <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center pt-28 md:pt-36 pb-24">
                 {/* Logo */}
                 <motion.div
                     variants={fadeUp}
@@ -186,20 +186,20 @@ export default function HeroSection() {
                     initial="hidden"
                     animate="visible"
                     custom={0.36}
-                    className="flex flex-wrap items-center justify-center gap-3"
+                    className="flex flex-wrap items-center justify-center gap-3 lg:gap-4 mt-2"
                 >
-                    <div className="glass rounded-full px-5 py-2.5 flex items-center gap-3 glow-accent">
-                        <span className="text-sm font-heading font-medium tracking-wide" style={{ color: "var(--text-primary)" }}>
+                    <div className="glass backdrop-blur-xl bg-[rgba(255,255,255,0.08)] border border-white/10 rounded-full px-5 lg:px-6 py-2.5 lg:py-3 flex items-center gap-3 glow-accent">
+                        <span className="text-sm lg:text-base font-heading font-semibold tracking-wide text-white">
                             Series &apos;24
                         </span>
-                        <div className="w-1 h-1 rounded-full bg-accent pulse-ring" />
-                        <span className="text-sm font-heading font-medium tracking-wide" style={{ color: "var(--text-primary)" }}>
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent pulse-ring" />
+                        <span className="text-sm lg:text-base font-heading font-semibold tracking-wide text-white">
                             Section A
                         </span>
                     </div>
-                    <div className="glass rounded-full px-5 py-2.5 flex items-center gap-2.5">
-                        <Users className="w-4 h-4 text-accent-bright" />
-                        <span className="text-sm font-heading font-medium" style={{ color: "var(--text-secondary)" }}>
+                    <div className="glass backdrop-blur-xl bg-[rgba(255,255,255,0.08)] border border-white/10 rounded-full px-5 lg:px-6 py-2.5 lg:py-3 flex items-center gap-2.5">
+                        <Users className="w-4 h-4 lg:w-5 lg:h-5 text-accent-bright" />
+                        <span className="text-sm lg:text-base font-heading font-semibold text-white">
                             {total} Students
                         </span>
                     </div>

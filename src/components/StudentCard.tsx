@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Student } from "@/data/students";
 import { MapPin, GraduationCap, School, Facebook, Phone, RotateCcw } from "lucide-react";
 
@@ -12,7 +13,6 @@ interface StudentCardProps {
 export default function StudentCard({ student }: StudentCardProps) {
     const [isFlipped, setIsFlipped] = useState(false);
     const [imgLoaded, setImgLoaded] = useState(false);
-    const cardRef = useRef<HTMLDivElement>(null);
 
     const handleFlip = useCallback(() => {
         setIsFlipped(prev => !prev);
@@ -22,12 +22,14 @@ export default function StudentCard({ student }: StudentCardProps) {
 
     return (
         <div
-            ref={cardRef}
-            className="relative w-full aspect-[3/4] max-w-[300px] mx-auto perspective-1200"
+            className="relative w-full aspect-[3/4] max-w-[300px] mx-auto perspective-1200 cursor-pointer group"
             onClick={handleFlip}
         >
-            <div
-                className={`w-full h-full transition-transform duration-[500ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] preserve-3d cursor-pointer will-change-transform ${isFlipped ? "rotate-y-180" : ""}`}
+            <motion.div
+                initial={false}
+                animate={{ rotateY: isFlipped ? 180 : 0 }}
+                transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
+                className="w-full h-full preserve-3d relative"
             >
                 {/* ── FRONT ── */}
                 <div
@@ -171,7 +173,7 @@ export default function StudentCard({ student }: StudentCardProps) {
                         )}
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 }
