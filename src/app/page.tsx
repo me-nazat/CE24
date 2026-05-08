@@ -7,14 +7,13 @@ import HeroSection from "@/components/HeroSection";
 import SearchBar from "@/components/SearchBar";
 import { students } from "@/data/students";
 
-// Dynamically import heavy components
 const StudentGrid = dynamic(() => import("@/components/StudentGrid"), {
   loading: () => (
     <div className="w-full py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {Array.from({ length: 8 }).map((_, i) => (
-            <div key={i} className="aspect-[3/4] rounded-3xl skeleton" />
+            <div key={i} className="aspect-[3/4] rounded-[20px] skeleton" />
           ))}
         </div>
       </div>
@@ -25,39 +24,37 @@ const MemoriesFooter = dynamic(() => import("@/components/MemoriesFooter"), { ss
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
-  // Debounce search query by 300ms to prevent lag while typing on low-end devices
   const [debouncedSearchQuery] = useDebounce(searchQuery, 300);
   const [filterType, setFilterType] = useState<"all" | "name" | "id" | "hometown">("all");
 
   const filteredStudents = useMemo(() => {
     if (!debouncedSearchQuery.trim()) return students;
 
-    const lowerQuery = debouncedSearchQuery.toLowerCase();
+    const q = debouncedSearchQuery.toLowerCase();
 
-    return students.filter((student) => {
+    return students.filter((s) => {
       switch (filterType) {
         case "name":
-          return student.name.toLowerCase().includes(lowerQuery);
+          return s.name.toLowerCase().includes(q);
         case "id":
-          return student.studentId.toLowerCase().includes(lowerQuery);
+          return s.studentId.toLowerCase().includes(q);
         case "hometown":
-          return student.hometown.toLowerCase().includes(lowerQuery);
-        case "all":
+          return s.hometown.toLowerCase().includes(q);
         default:
           return (
-            student.name.toLowerCase().includes(lowerQuery) ||
-            student.studentId.toLowerCase().includes(lowerQuery) ||
-            student.hometown.toLowerCase().includes(lowerQuery)
+            s.name.toLowerCase().includes(q) ||
+            s.studentId.toLowerCase().includes(q) ||
+            s.hometown.toLowerCase().includes(q)
           );
       }
     });
   }, [debouncedSearchQuery, filterType]);
 
   return (
-    <main className="min-h-screen flex flex-col items-center bg-brand-deep">
+    <main className="min-h-screen flex flex-col items-center" style={{ background: "var(--bg-primary)" }}>
       <HeroSection />
 
-      <div className="w-full relative -mt-8 z-20">
+      <div className="w-full relative -mt-6 z-20">
         <SearchBar
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}

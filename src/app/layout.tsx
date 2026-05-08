@@ -16,7 +16,8 @@ const poppins = Poppins({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#06090f",
+  themeColor: "#050508",
+  colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
 };
@@ -46,9 +47,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
       <body
-        className={`${inter.variable} ${poppins.variable} font-sans antialiased bg-brand-deep text-foreground`}
+        className={`${inter.variable} ${poppins.variable} font-sans antialiased`}
       >
         {children}
       </body>

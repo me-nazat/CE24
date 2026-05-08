@@ -1,98 +1,94 @@
 "use client";
 
-import { useEffect, useRef, useMemo } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronDown, Users } from "lucide-react";
 
-// Floating particle component
+/* ── Ambient Particles ── */
 function Particles() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
-
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
 
-        let animationId: number;
-        let particles: Array<{
-            x: number; y: number;
-            vx: number; vy: number;
-            size: number; opacity: number;
-            hue: number;
-        }> = [];
+        let raf: number;
+        const dots: { x: number; y: number; vx: number; vy: number; r: number; o: number }[] = [];
 
         const resize = () => {
-            canvas.width = canvas.offsetWidth * window.devicePixelRatio;
-            canvas.height = canvas.offsetHeight * window.devicePixelRatio;
-            ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = canvas.offsetWidth * dpr;
+            canvas.height = canvas.offsetHeight * dpr;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         };
 
-        const createParticles = () => {
-            const count = Math.min(40, Math.floor(canvas.offsetWidth / 25));
-            particles = Array.from({ length: count }, () => ({
-                x: Math.random() * canvas.offsetWidth,
-                y: Math.random() * canvas.offsetHeight,
-                vx: (Math.random() - 0.5) * 0.3,
-                vy: (Math.random() - 0.5) * 0.3,
-                size: Math.random() * 2 + 0.5,
-                opacity: Math.random() * 0.4 + 0.1,
-                hue: Math.random() > 0.7 ? 180 : 210, // cyan or blue
-            }));
+        const init = () => {
+            const count = Math.min(50, Math.floor(canvas.offsetWidth / 20));
+            dots.length = 0;
+            for (let i = 0; i < count; i++) {
+                dots.push({
+                    x: Math.random() * canvas.offsetWidth,
+                    y: Math.random() * canvas.offsetHeight,
+                    vx: (Math.random() - 0.5) * 0.25,
+                    vy: (Math.random() - 0.5) * 0.25,
+                    r: Math.random() * 1.5 + 0.5,
+                    o: Math.random() * 0.3 + 0.05,
+                });
+            }
         };
 
-        const animate = () => {
-            ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+        const draw = () => {
+            const w = canvas.offsetWidth;
+            const h = canvas.offsetHeight;
+            ctx.clearRect(0, 0, w, h);
 
-            particles.forEach((p) => {
-                p.x += p.vx;
-                p.y += p.vy;
-
-                if (p.x < 0) p.x = canvas.offsetWidth;
-                if (p.x > canvas.offsetWidth) p.x = 0;
-                if (p.y < 0) p.y = canvas.offsetHeight;
-                if (p.y > canvas.offsetHeight) p.y = 0;
+            for (const d of dots) {
+                d.x += d.vx;
+                d.y += d.vy;
+                if (d.x < 0) d.x = w;
+                if (d.x > w) d.x = 0;
+                if (d.y < 0) d.y = h;
+                if (d.y > h) d.y = 0;
 
                 ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fillStyle = `hsla(${p.hue}, 100%, 70%, ${p.opacity})`;
+                ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(108, 99, 255, ${d.o})`;
                 ctx.fill();
-            });
+            }
 
-            // Connect nearby particles
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
+            // Connections
+            for (let i = 0; i < dots.length; i++) {
+                for (let j = i + 1; j < dots.length; j++) {
+                    const dx = dots[i].x - dots[j].x;
+                    const dy = dots[i].y - dots[j].y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 120) {
+                    if (dist < 100) {
                         ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = `hsla(190, 100%, 70%, ${0.06 * (1 - dist / 120)})`;
+                        ctx.moveTo(dots[i].x, dots[i].y);
+                        ctx.lineTo(dots[j].x, dots[j].y);
+                        ctx.strokeStyle = `rgba(108, 99, 255, ${0.04 * (1 - dist / 100)})`;
                         ctx.lineWidth = 0.5;
                         ctx.stroke();
                     }
                 }
             }
 
-            animationId = requestAnimationFrame(animate);
+            raf = requestAnimationFrame(draw);
         };
 
         resize();
-        createParticles();
-        animate();
+        init();
+        draw();
 
-        window.addEventListener("resize", () => {
-            resize();
-            createParticles();
-        });
+        const handleResize = () => { resize(); init(); };
+        window.addEventListener("resize", handleResize);
 
         return () => {
-            cancelAnimationFrame(animationId);
-            window.removeEventListener("resize", resize);
+            cancelAnimationFrame(raf);
+            window.removeEventListener("resize", handleResize);
         };
     }, []);
 
@@ -105,50 +101,47 @@ function Particles() {
     );
 }
 
+/* ── Motion variants ── */
+const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
+
 const fadeUp = {
-    hidden: { opacity: 0, y: 30, scale: 0.97 },
+    hidden: { opacity: 0, y: 28 },
     visible: (delay: number) => ({
         opacity: 1,
         y: 0,
-        scale: 1,
-        transition: {
-            duration: 0.8,
-            delay,
-            ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
-        },
+        transition: { duration: 0.9, delay, ease },
     }),
 };
 
 export default function HeroSection() {
-    const studentCount = 55;
+    const total = 55;
 
     return (
-        <section className="relative w-full min-h-[75vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden">
-            {/* Background Image */}
+        <section className="relative w-full min-h-[80vh] md:min-h-[88vh] flex items-center justify-center overflow-hidden">
+            {/* BG Image */}
             <div className="absolute inset-0 z-0">
                 <Image
                     src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=60&w=1920&auto=format&fit=crop"
                     alt="University Campus"
                     fill
                     priority
-                    quality={50}
+                    quality={55}
                     sizes="100vw"
-                    className="object-cover object-center scale-105"
+                    className="object-cover object-center"
                     placeholder="blur"
                     blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFAABAAAAAAAAAAAAAAAAAAAABv/EAB8QAAICAgIDAQAAAAAAAAAAAAECAwQABREhBhIxQf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AruR8jt2K1ilDp6cMUyFC7TSl2X+D4wYxB//Z"
                 />
-                {/* Multi-layer overlay for cinematic depth */}
-                <div className="absolute inset-0 bg-gradient-to-b from-brand-deep/80 via-brand-deep/50 to-brand-deep z-[1]" />
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-deep/40 via-transparent to-brand-deep/40 z-[1]" />
-                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-deep to-transparent z-[2]" />
+                {/* Cinematic overlays */}
+                <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-primary)]/85 via-[var(--bg-primary)]/55 to-[var(--bg-primary)] z-[1]" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg-primary)]/50 via-transparent to-[var(--bg-primary)]/50 z-[1]" />
+                <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[var(--bg-primary)] to-transparent z-[2]" />
             </div>
 
-            {/* Particle overlay */}
             <Particles />
 
             {/* Content */}
-            <div className="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col items-center py-20 md:py-28">
-                {/* Logo Mark */}
+            <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center py-24 md:py-32">
+                {/* Logo */}
                 <motion.div
                     variants={fadeUp}
                     initial="hidden"
@@ -156,81 +149,80 @@ export default function HeroSection() {
                     custom={0}
                     className="relative mb-10"
                 >
-                    <div className="w-24 h-24 md:w-32 md:h-32 glass rounded-3xl flex items-center justify-center shadow-[0_0_60px_rgba(0,229,255,0.12)] float">
-                        <span className="text-3xl md:text-5xl font-heading font-black text-gradient-cyan tracking-[0.15em]">
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl glass flex items-center justify-center float-slow shadow-[0_0_50px_rgba(108,99,255,0.12)]">
+                        <span className="text-2xl md:text-3xl font-heading font-extrabold text-gradient tracking-[0.12em]">
                             CE
                         </span>
                     </div>
-                    {/* Glowing ring */}
-                    <div className="absolute -inset-3 rounded-[2rem] border border-brand-cyan/10 animate-pulse pointer-events-none" />
+                    <div className="absolute -inset-2.5 rounded-[18px] border border-accent/10 pulse-ring pointer-events-none" />
                 </motion.div>
 
-                {/* Headline */}
+                {/* Title */}
                 <motion.h1
                     variants={fadeUp}
                     initial="hidden"
                     animate="visible"
-                    custom={0.15}
-                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-extrabold mb-5 tracking-tight leading-[1.05] text-white"
+                    custom={0.12}
+                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-heading font-extrabold mb-4 tracking-[-0.02em] leading-[1.08]"
                 >
-                    Civil{" "}
-                    <span className="text-gradient-cyan">
-                        Engineering
-                    </span>
+                    <span className="text-[var(--text-primary)]">Civil </span>
+                    <span className="text-gradient">Engineering</span>
                 </motion.h1>
 
-                {/* Subtitle */}
+                {/* Uni name */}
                 <motion.p
                     variants={fadeUp}
                     initial="hidden"
                     animate="visible"
-                    custom={0.3}
-                    className="text-[11px] md:text-xs lg:text-sm font-sans text-white/50 mb-10 font-semibold tracking-[0.25em] md:tracking-[0.3em] uppercase"
+                    custom={0.24}
+                    className="text-[10px] sm:text-xs font-sans font-semibold uppercase tracking-[0.3em] mb-10"
+                    style={{ color: "var(--text-secondary)" }}
                 >
                     Rajshahi University of Engineering &amp; Technology
                 </motion.p>
 
-                {/* Info badges */}
+                {/* Badges */}
                 <motion.div
                     variants={fadeUp}
                     initial="hidden"
                     animate="visible"
-                    custom={0.45}
-                    className="flex flex-wrap items-center justify-center gap-3 md:gap-4"
+                    custom={0.36}
+                    className="flex flex-wrap items-center justify-center gap-3"
                 >
-                    <div className="glass rounded-2xl px-5 py-2.5 md:px-7 md:py-3 flex items-center gap-3 glow-cyan">
-                        <span className="text-sm md:text-base font-heading text-white/90 font-medium tracking-wider">
+                    <div className="glass rounded-full px-5 py-2.5 flex items-center gap-3 glow-accent">
+                        <span className="text-sm font-heading font-medium tracking-wide" style={{ color: "var(--text-primary)" }}>
                             Series &apos;24
                         </span>
-                        <div className="w-1.5 h-1.5 rounded-full bg-brand-cyan pulse-dot" />
-                        <span className="text-sm md:text-base font-heading text-white/90 font-medium tracking-wider">
+                        <div className="w-1 h-1 rounded-full bg-accent pulse-ring" />
+                        <span className="text-sm font-heading font-medium tracking-wide" style={{ color: "var(--text-primary)" }}>
                             Section A
                         </span>
                     </div>
-                    <div className="glass rounded-2xl px-5 py-2.5 md:px-7 md:py-3 flex items-center gap-2.5">
-                        <Users className="w-4 h-4 text-brand-cyan/80" />
-                        <span className="text-sm md:text-base font-heading text-white/70 font-medium">
-                            {studentCount} Students
+                    <div className="glass rounded-full px-5 py-2.5 flex items-center gap-2.5">
+                        <Users className="w-4 h-4 text-accent-bright" />
+                        <span className="text-sm font-heading font-medium" style={{ color: "var(--text-secondary)" }}>
+                            {total} Students
                         </span>
                     </div>
                 </motion.div>
 
-                {/* Scroll indicator */}
+                {/* Scroll CTA */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1.2, duration: 0.8 }}
-                    className="absolute bottom-8 left-1/2 -translate-x-1/2"
+                    transition={{ delay: 1.5, duration: 0.8 }}
+                    className="absolute bottom-6 left-1/2 -translate-x-1/2"
                 >
                     <button
-                        onClick={() => {
-                            document.getElementById("directory")?.scrollIntoView({ behavior: "smooth" });
-                        }}
-                        className="flex flex-col items-center gap-2 text-white/30 hover:text-white/60 transition-colors duration-300 cursor-pointer group"
+                        onClick={() => document.getElementById("directory")?.scrollIntoView({ behavior: "smooth" })}
+                        className="flex flex-col items-center gap-1.5 cursor-pointer group"
+                        style={{ color: "var(--text-muted)" }}
                         aria-label="Scroll to directory"
                     >
-                        <span className="text-[10px] uppercase tracking-[0.2em] font-semibold">Explore</span>
-                        <ChevronDown className="w-5 h-5 animate-bounce" />
+                        <span className="text-[9px] uppercase tracking-[0.25em] font-semibold group-hover:text-accent-bright transition-colors duration-300">
+                            Explore
+                        </span>
+                        <ChevronDown className="w-4 h-4 animate-bounce group-hover:text-accent-bright transition-colors duration-300" />
                     </button>
                 </motion.div>
             </div>

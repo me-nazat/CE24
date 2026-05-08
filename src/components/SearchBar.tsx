@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { Search, MapPin, Hash, X, User } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -22,84 +22,76 @@ export default function SearchBar({
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="sticky top-4 z-40 w-full max-w-3xl mx-auto px-4 mb-14"
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="sticky top-4 z-40 w-full max-w-2xl mx-auto px-4 mb-14"
         >
             <div
-                className={`glass rounded-2xl p-1.5 sm:p-2 flex flex-col sm:flex-row gap-1.5 transition-all duration-300 ${isFocused
-                    ? "border-brand-cyan/20 shadow-[0_0_40px_rgba(0,229,255,0.08)]"
+                className={`glass rounded-2xl p-1.5 flex flex-col sm:flex-row gap-1 transition-all duration-300 ${isFocused
+                    ? "shadow-[0_0_0_1px_rgba(108,99,255,0.15),0_8px_40px_-8px_rgba(108,99,255,0.1)]"
                     : ""
                     }`}
+                style={{
+                    borderColor: isFocused ? "rgba(108, 99, 255, 0.15)" : undefined,
+                }}
             >
-                {/* Search Input */}
+                {/* Input */}
                 <div className="relative flex-grow flex items-center">
-                    <Search className={`absolute left-3.5 w-[18px] h-[18px] transition-colors duration-200 ${isFocused ? "text-brand-cyan" : "text-white/30"}`} />
+                    <Search
+                        className="absolute left-3.5 w-4 h-4 transition-colors duration-200"
+                        style={{ color: isFocused ? "var(--accent-bright)" : "var(--text-muted)" }}
+                    />
                     <input
                         ref={inputRef}
                         type="text"
-                        placeholder="Search students..."
+                        placeholder="Search by name, ID, or hometown…"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         onFocus={() => setIsFocused(true)}
                         onBlur={() => setIsFocused(false)}
-                        className="w-full bg-transparent border-none py-2.5 pl-11 pr-10 text-white placeholder-white/25 focus:outline-none focus:ring-0 font-sans text-base sm:text-lg"
+                        className="w-full bg-transparent border-none py-2.5 pl-10 pr-9 focus:outline-none focus:ring-0 font-sans text-sm"
+                        style={{ color: "var(--text-primary)", caretColor: "var(--accent-bright)" }}
                         id="search-input"
                     />
-                    {/* Clear button */}
+
                     <AnimatePresence>
                         {searchQuery && (
                             <motion.button
-                                initial={{ opacity: 0, scale: 0.8 }}
+                                initial={{ opacity: 0, scale: 0.7 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.8 }}
-                                transition={{ duration: 0.15 }}
+                                exit={{ opacity: 0, scale: 0.7 }}
+                                transition={{ duration: 0.12 }}
                                 onClick={() => {
                                     setSearchQuery("");
                                     inputRef.current?.focus();
                                 }}
-                                className="absolute right-3 p-1 rounded-lg bg-white/5 hover:bg-white/10 text-white/40 hover:text-white/70 transition-all duration-200 cursor-pointer"
+                                className="absolute right-2.5 p-1 rounded-md transition-colors duration-150 cursor-pointer"
+                                style={{ background: "var(--surface-glass)", color: "var(--text-muted)" }}
                                 aria-label="Clear search"
                             >
-                                <X className="w-3.5 h-3.5" />
+                                <X className="w-3 h-3" />
                             </motion.button>
                         )}
                     </AnimatePresence>
                 </div>
 
-                {/* Filter Badges */}
-                <div className="flex items-center gap-1 overflow-x-auto pb-0.5 sm:pb-0 px-1.5 sm:px-0 scrollbar-hide">
-                    <FilterButton
-                        active={filterType === "all"}
-                        onClick={() => setFilterType("all")}
-                        label="All"
-                    />
-                    <FilterButton
-                        active={filterType === "name"}
-                        onClick={() => setFilterType("name")}
-                        icon={<User className="w-3.5 h-3.5" />}
-                        label="Name"
-                    />
-                    <FilterButton
-                        active={filterType === "id"}
-                        onClick={() => setFilterType("id")}
-                        icon={<Hash className="w-3.5 h-3.5" />}
-                        label="ID"
-                    />
-                    <FilterButton
-                        active={filterType === "hometown"}
-                        onClick={() => setFilterType("hometown")}
-                        icon={<MapPin className="w-3.5 h-3.5" />}
-                        label="Home"
-                    />
+                {/* Divider */}
+                <div className="hidden sm:block w-px self-stretch my-1.5 mx-1" style={{ background: "var(--border-subtle)" }} />
+
+                {/* Filters */}
+                <div className="flex items-center gap-0.5 overflow-x-auto scrollbar-hide px-1 sm:px-0">
+                    <Pill active={filterType === "all"} onClick={() => setFilterType("all")} label="All" />
+                    <Pill active={filterType === "name"} onClick={() => setFilterType("name")} icon={<User className="w-3 h-3" />} label="Name" />
+                    <Pill active={filterType === "id"} onClick={() => setFilterType("id")} icon={<Hash className="w-3 h-3" />} label="ID" />
+                    <Pill active={filterType === "hometown"} onClick={() => setFilterType("hometown")} icon={<MapPin className="w-3 h-3" />} label="Home" />
                 </div>
             </div>
         </motion.div>
     );
 }
 
-function FilterButton({
+function Pill({
     active,
     onClick,
     icon,
@@ -113,10 +105,12 @@ function FilterButton({
     return (
         <button
             onClick={onClick}
-            className={`flex flex-shrink-0 items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-250 cursor-pointer ${active
-                ? "bg-brand-cyan/15 text-brand-cyan border border-brand-cyan/20 font-semibold shadow-[0_0_12px_rgba(0,229,255,0.1)]"
-                : "text-white/40 hover:text-white/60 hover:bg-white/[0.04]"
-                }`}
+            className="flex flex-shrink-0 items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 cursor-pointer"
+            style={{
+                background: active ? "var(--accent-glow)" : "transparent",
+                color: active ? "var(--accent-bright)" : "var(--text-muted)",
+                border: active ? "1px solid rgba(108,99,255,0.15)" : "1px solid transparent",
+            }}
         >
             {icon}
             {label}
