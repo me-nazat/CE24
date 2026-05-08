@@ -8,22 +8,19 @@ import { MapPin, GraduationCap, School, Facebook, Phone, RotateCcw } from "lucid
 
 interface StudentCardProps {
     student: Student;
+    isFlipped: boolean;
+    onFlip: () => void;
 }
 
-export default function StudentCard({ student }: StudentCardProps) {
-    const [isFlipped, setIsFlipped] = useState(false);
+export default function StudentCard({ student, isFlipped, onFlip }: StudentCardProps) {
     const [imgLoaded, setImgLoaded] = useState(false);
-
-    const handleFlip = useCallback(() => {
-        setIsFlipped(prev => !prev);
-    }, []);
 
     const isRep = student.isRep;
 
     return (
         <div
             className="relative w-full aspect-[3/4] max-w-[300px] mx-auto perspective-1200 cursor-pointer group"
-            onClick={handleFlip}
+            onClick={onFlip}
         >
             <motion.div
                 initial={false}

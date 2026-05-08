@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Student } from "@/data/students";
 import StudentCard from "./StudentCard";
 import { motion } from "framer-motion";
@@ -26,6 +27,7 @@ const cardVariant = {
 };
 
 export default function StudentGrid({ students }: StudentGridProps) {
+    const [flippedId, setFlippedId] = useState<string | null>(null);
     const reps = students.filter((s) => s.isRep);
 
     if (students.length === 0) {
@@ -69,7 +71,11 @@ export default function StudentGrid({ students }: StudentGridProps) {
                     >
                         {reps.map((student) => (
                             <motion.div key={student.id} variants={cardVariant}>
-                                <StudentCard student={student} />
+                                <StudentCard 
+                                    student={student} 
+                                    isFlipped={flippedId === student.id}
+                                    onFlip={() => setFlippedId(flippedId === student.id ? null : student.id)}
+                                />
                             </motion.div>
                         ))}
                     </motion.div>
@@ -88,7 +94,11 @@ export default function StudentGrid({ students }: StudentGridProps) {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
                         {students.map((student) => (
                             <div key={student.id} className="reveal-card cv-auto">
-                                <StudentCard student={student} />
+                                <StudentCard 
+                                    student={student}
+                                    isFlipped={flippedId === student.id}
+                                    onFlip={() => setFlippedId(flippedId === student.id ? null : student.id)}
+                                />
                             </div>
                         ))}
                     </div>

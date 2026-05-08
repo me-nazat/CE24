@@ -186,7 +186,7 @@ export default function HeroSection() {
                     initial="hidden"
                     animate="visible"
                     custom={0.36}
-                    className="absolute bottom-20 md:static md:bottom-auto w-full left-0 px-4 flex flex-wrap items-center justify-center gap-3 lg:gap-4 md:mt-2 md:w-auto md:px-0"
+                    className="absolute bottom-12 md:static md:bottom-auto w-full left-0 px-4 flex flex-wrap items-center justify-center gap-3 lg:gap-4 md:mt-2 md:w-auto md:px-0"
                 >
                     <div className="glass backdrop-blur-2xl bg-[rgba(255,255,255,0.15)] border border-white/20 rounded-full px-5 lg:px-6 py-2.5 lg:py-3 flex items-center gap-3 glow-accent shadow-lg">
                         <span className="text-sm lg:text-base font-heading font-bold tracking-wide text-white drop-shadow-md">

@@ -44,7 +44,7 @@ export default function MemoriesFooter() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, ease }}
-                    className="relative w-full h-[350px] md:h-[500px] rounded-[24px] overflow-hidden group cursor-pointer shadow-2xl"
+                    className="relative w-full h-[220px] sm:h-[350px] md:h-[500px] rounded-[24px] overflow-hidden group cursor-pointer shadow-2xl"
                 >
                     <Image
                         src="https://i.ibb.co.com/qFXLSM9M/ce24-A-pic.jpg"
@@ -53,7 +53,7 @@ export default function MemoriesFooter() {
                         unoptimized
                         loading="lazy"
                         quality={85}
-                        className="object-cover object-[center_35%] transition-transform duration-[800ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-[1.03]"
+                        className="object-contain md:object-cover object-[center_35%] transition-transform duration-[800ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-[1.03]"
                     />
                     {/* Subtle Overlay */}
                     <div className="absolute inset-0 transition-colors duration-500"

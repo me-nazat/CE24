@@ -25,7 +25,7 @@ export default function SearchBar({
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="sticky top-4 z-40 w-full max-w-2xl mx-auto px-4 mb-14"
+            className="sticky top-4 z-40 w-[95%] md:w-full max-w-2xl mx-auto md:px-4 mb-14"
         >
             <div
                 className={`glass rounded-2xl p-1.5 flex flex-col sm:flex-row gap-1 transition-all duration-300 ${isFocused
