@@ -20,13 +20,15 @@ export const students: Student[] = [
     {
         "id": "1",
         "studentId": "2400001",
-        "name": "Unknown",
-        "hometown": "Unknown",
-        "highSchool": "Unknown",
-        "college": "Unknown",
+        "name": "Syed Sunyeat Hossain",
+        "hometown": "Rajshahi",
+        "highSchool": "Rajshahi Cantonment Public School and College",
+        "college": "Rajshahi Cantonment Public School and College",
         "avatarUrl": "/students/Photos/2400001.jpg",
         "socials": {
-
+            "facebook": "https://www.facebook.com/share/1bSrym17SL/?mibextid=wwXIfr",
+            "whatsapp": "https://wa.me/+8801620000364",
+            "phone": "01620000364"
         }
     },
     {
@@ -60,13 +62,15 @@ export const students: Student[] = [
     {
         "id": "4",
         "studentId": "2400004",
-        "name": "Unknown",
-        "hometown": "Unknown",
-        "highSchool": "Unknown",
-        "college": "Unknown",
-        "avatarUrl": "/students/default-avatar.svg",
+        "name": "Yafin Al Supto",
+        "hometown": "Sherpur",
+        "highSchool": "",
+        "college": "Notre Dame College",
+        "avatarUrl": "/students/Photos/2400004.jpg",
         "socials": {
-
+            "facebook": "https://www.facebook.com/yafin.al.supto.2024",
+            "whatsapp": "https://wa.me/+8801933136284",
+            "phone": "01933136284"
         }
     },
     {
@@ -91,7 +95,7 @@ export const students: Student[] = [
         "hometown": "Savar, Dhaka",
         "highSchool": "Sena Public School & College",
         "college": "Savar Cant. Public",
-        "avatarUrl": "/students/Photos/2400006.webp",
+        "avatarUrl": "/students/Photos/2400006.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/14ZAU9nHZWr/",
             "whatsapp": "https://wa.me/+8801779444659",
@@ -105,7 +109,7 @@ export const students: Student[] = [
         "hometown": "Panchagarh",
         "highSchool": "BP Govt High School",
         "college": "Rangpur Govt. College",
-        "avatarUrl": "/students/Photos/2400007.webp",
+        "avatarUrl": "/students/Photos/2400007.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1BLr74A8Fq/",
             "whatsapp": "https://wa.me/+8801518906931",
@@ -133,7 +137,7 @@ export const students: Student[] = [
         "hometown": "Dhaka",
         "highSchool": "Collectorate Public School",
         "college": "BAF Shaheen College",
-        "avatarUrl": "/students/Photos/2400009.webp",
+        "avatarUrl": "/students/Photos/2400009.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/iyowosadat",
             "whatsapp": "https://wa.me/+8801842021677",
@@ -161,7 +165,7 @@ export const students: Student[] = [
         "hometown": "Khulna",
         "highSchool": "Govt. Laboratory High",
         "college": "Govt. M.M. City College",
-        "avatarUrl": "/students/default-avatar.svg",
+        "avatarUrl": "/students/Photos/2400011.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/17obqDxSLQ/",
             "whatsapp": "https://wa.me/+8801949292587",
@@ -219,7 +223,6 @@ export const students: Student[] = [
         "college": "Notre Dame College",
         "avatarUrl": "/students/Photos/2400015.png",
         "socials": {
-            "facebook": "-",
             "whatsapp": "https://wa.me/+8801741553760",
             "phone": "01741553760"
         }
@@ -231,7 +234,7 @@ export const students: Student[] = [
         "hometown": "Narail",
         "highSchool": "Mohajon Ghoshibaria High",
         "college": "Munshi Manik Mia Degree College",
-        "avatarUrl": "/students/Photos/2400016.webp",
+        "avatarUrl": "/students/Photos/2400016.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/174Dh2E9u8/",
             "whatsapp": "https://wa.me/+8801843528236",
@@ -245,7 +248,7 @@ export const students: Student[] = [
         "hometown": "Kushtia",
         "highSchool": "Baragangdia Secondary School",
         "college": "Dhaka College",
-        "avatarUrl": "/students/Photos/2400017.webp",
+        "avatarUrl": "/students/Photos/2400017.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1C3D3MY796/",
             "whatsapp": "https://wa.me/+8801608512988",
@@ -301,7 +304,7 @@ export const students: Student[] = [
         "hometown": "Pabna",
         "highSchool": "Qadirabad Cant. Public",
         "college": "Dhaka Residential Model",
-        "avatarUrl": "/students/Photos/2400021.webp",
+        "avatarUrl": "/students/Photos/2400021.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1FZ92sTaFc/",
             "whatsapp": "https://wa.me/+8801792675402",
@@ -371,7 +374,7 @@ export const students: Student[] = [
         "hometown": "Bogura",
         "highSchool": "A.P.B.N School & College",
         "college": "Govt. Azizul Haque College",
-        "avatarUrl": "/students/Photos/2400026.webp",
+        "avatarUrl": "/students/Photos/2400026.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/pranto7m",
             "whatsapp": "https://wa.me/+8801764604553",
@@ -385,7 +388,7 @@ export const students: Student[] = [
         "hometown": "Kushtia",
         "highSchool": "Gangni Pilot High School",
         "college": "Kushtia Govt College",
-        "avatarUrl": "/students/Photos/2400027.webp",
+        "avatarUrl": "/students/Photos/2400027.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1G42UJKhfZ/",
             "whatsapp": "https://wa.me/qr/LQLHG4XLAVAEA1",
@@ -427,7 +430,7 @@ export const students: Student[] = [
         "hometown": "Kushtia",
         "highSchool": "Monipur High School",
         "college": "Mirpur Cant. Public",
-        "avatarUrl": "/students/Photos/2400030.webp",
+        "avatarUrl": "/students/Photos/2400030.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1B7x5CCGoP/",
             "whatsapp": "https://wa.me/+8801736156343",
@@ -441,7 +444,7 @@ export const students: Student[] = [
         "hometown": "Tangail",
         "highSchool": "Police Lines Adarsha High",
         "college": "Major Gen. M. Hasan College",
-        "avatarUrl": "/students/Photos/2400031.webp",
+        "avatarUrl": "/students/Photos/2400031.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1AxKDNFhuh/",
             "whatsapp": "https://wa.me/+8801331501055",
@@ -469,7 +472,7 @@ export const students: Student[] = [
         "hometown": "Natore",
         "highSchool": "Saint Louis High School",
         "college": "Baraigram Govt. College",
-        "avatarUrl": "/students/Photos/2400033.webp",
+        "avatarUrl": "/students/Photos/2400033.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1GwroBwpnK/",
             "whatsapp": "https://wa.me/qr/RREQBLQSUBHRA1",
@@ -511,7 +514,7 @@ export const students: Student[] = [
         "hometown": "Barishal",
         "highSchool": "Ratnopur Secondary school",
         "college": "Notre Dame College",
-        "avatarUrl": "/students/Photos/2400036.webp",
+        "avatarUrl": "/students/Photos/2400036.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1C1SQM9uAb/",
             "whatsapp": "https://wa.me/+8801776248949",
@@ -525,7 +528,7 @@ export const students: Student[] = [
         "hometown": "Rajshahi",
         "highSchool": "Masjid Mission Academy",
         "college": "Rajshahi Govt City College",
-        "avatarUrl": "/students/Photos/2400037.webp",
+        "avatarUrl": "/students/Photos/2400037.jpeg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1bgeS7tmR1/",
             "whatsapp": "https://wa.me/+8801341814153",
@@ -567,7 +570,7 @@ export const students: Student[] = [
         "hometown": "Cumilla",
         "highSchool": "Saicha Para High School",
         "college": "Paruara Abdul Matin College",
-        "avatarUrl": "/students/Photos/2400040.webp",
+        "avatarUrl": "/students/Photos/2400040.png",
         "socials": {
             "facebook": "https://www.facebook.com/share/17PwfXBkyR/",
             "whatsapp": "https://wa.me/+8801728760650",
@@ -581,7 +584,7 @@ export const students: Student[] = [
         "hometown": "Jashore",
         "highSchool": "Jashore Govt. Girls High",
         "college": "Govt. M.M. College",
-        "avatarUrl": "/students/Photos/2400041.webp",
+        "avatarUrl": "/students/Photos/2400041.jpeg",
         "socials": {
             "facebook": "https://www.facebook.com/suraiyarouf.sura.9",
             "whatsapp": "https://wa.me/+8801407086053",
@@ -595,7 +598,7 @@ export const students: Student[] = [
         "hometown": "Gaibandha",
         "highSchool": "Ideal School and College",
         "college": "St. Joseph Higher Secondary",
-        "avatarUrl": "/students/Photos/2400042.webp",
+        "avatarUrl": "/students/Photos/2400042.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1C86u3iAta/",
             "whatsapp": "https://wa.me/+8801998630526",
@@ -637,7 +640,7 @@ export const students: Student[] = [
         "hometown": "Bogura",
         "highSchool": "Durgahata High School",
         "college": "Govt. Shah Sultan College",
-        "avatarUrl": "/students/Photos/2400045.webp",
+        "avatarUrl": "/students/Photos/2400045.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/mabdulkader339",
             "whatsapp": "https://wa.me/+8801787199778",
@@ -651,7 +654,7 @@ export const students: Student[] = [
         "hometown": "Dinajpur",
         "highSchool": "Dinajpur Zilla School",
         "college": "Saidpur Govt. Science College",
-        "avatarUrl": "/students/Photos/2400046.webp",
+        "avatarUrl": "/students/Photos/2400046.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/musabbirhossain06",
             "whatsapp": "https://wa.me/+8801336155081",
@@ -665,7 +668,7 @@ export const students: Student[] = [
         "hometown": "Narsingdi",
         "highSchool": "Paratali K.U. High School",
         "college": "Narsingdi Govt. College",
-        "avatarUrl": "/students/Photos/2400047.webp",
+        "avatarUrl": "/students/Photos/2400047.png",
         "socials": {
             "facebook": "https://www.facebook.com/share/1HKaFuSp2K/",
             "whatsapp": "https://wa.me/+8801572932462",
@@ -679,7 +682,7 @@ export const students: Student[] = [
         "hometown": "Naogaon",
         "highSchool": "Naogaon K.D Govt High",
         "college": "Rajshahi Govt City College",
-        "avatarUrl": "/students/Photos/2400048.webp",
+        "avatarUrl": "/students/Photos/2400048.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/ShakibSiam6345",
             "whatsapp": "https://wa.me/+8801763456814",
@@ -708,7 +711,7 @@ export const students: Student[] = [
         "hometown": "Barishal",
         "highSchool": "Barishal Zilla School",
         "college": "Govt. Syed Hatem Ali College",
-        "avatarUrl": "/students/Photos/2400050.webp",
+        "avatarUrl": "/students/Photos/2400050.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1AcBJ79Sd8/",
             "whatsapp": "https://wa.me/+8801318372213",
@@ -722,7 +725,7 @@ export const students: Student[] = [
         "hometown": "Rajshahi",
         "highSchool": "Agrani School & College",
         "college": "New Govt Degree College",
-        "avatarUrl": "/students/Photos/2400051.webp",
+        "avatarUrl": "/students/Photos/2400051.png",
         "socials": {
             "facebook": "https://www.facebook.com/share/1E8Y5WmDWe/",
             "whatsapp": "https://wa.me/+8801726618550",
@@ -736,7 +739,7 @@ export const students: Student[] = [
         "hometown": "Dhaka",
         "highSchool": "Motijheel Model School",
         "college": "Govt. Science College, Dhaka",
-        "avatarUrl": "/students/Photos/2400052.webp",
+        "avatarUrl": "/students/Photos/2400052.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1JCT6axvgM/",
             "whatsapp": "https://wa.me/+8801642972428",
@@ -750,7 +753,7 @@ export const students: Student[] = [
         "hometown": "Rajshahi",
         "highSchool": "MRK High School",
         "college": "New Govt. Degree College",
-        "avatarUrl": "/students/Photos/2400053.webp",
+        "avatarUrl": "/students/Photos/2400053.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1FPjT4ZT6x/",
             "whatsapp": "https://wa.me/+8801718512067",
@@ -764,7 +767,7 @@ export const students: Student[] = [
         "hometown": "Nilphamari",
         "highSchool": "Lion's School & College",
         "college": "Cantonment Public School",
-        "avatarUrl": "/students/Photos/2400054.webp",
+        "avatarUrl": "/students/Photos/2400054.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1AekxXVoaF/",
             "whatsapp": "https://wa.me/+8801768876336",
@@ -778,7 +781,7 @@ export const students: Student[] = [
         "hometown": "Pabna",
         "highSchool": "Alhera Academy",
         "college": "Govt. Edward College",
-        "avatarUrl": "/students/Photos/2400055.webp",
+        "avatarUrl": "/students/Photos/2400055.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1DxxpyhWGC/",
             "whatsapp": "https://wa.me/+8801318843058",
@@ -792,7 +795,7 @@ export const students: Student[] = [
         "hometown": "Pabna",
         "highSchool": "Pabna Govt. Girls High",
         "college": "Pabna Govt. Women College",
-        "avatarUrl": "/students/Photos/2400056.webp",
+        "avatarUrl": "/students/Photos/2400056.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/14ViHC8xwhN/",
             "whatsapp": "https://wa.me/+8801973423552",
@@ -806,7 +809,7 @@ export const students: Student[] = [
         "hometown": "Sylhet",
         "highSchool": "Govt. Agragami Girl's High",
         "college": "Sylhet Govt. Women's College",
-        "avatarUrl": "/students/Photos/2400057.webp",
+        "avatarUrl": "/students/Photos/2400057.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1CNR94rfty/",
             "whatsapp": "https://wa.me/+8801774842333",
@@ -834,7 +837,7 @@ export const students: Student[] = [
         "hometown": "Moulvibazar",
         "highSchool": "Moulvibazar Govt High",
         "college": "BNMPC, Dhaka",
-        "avatarUrl": "/students/default-avatar.svg",
+        "avatarUrl": "/students/Photos/2400059.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/18JdZwBNq2/",
             "whatsapp": "https://wa.me/qr/C4XXQRGUUKWNO1",
@@ -848,7 +851,7 @@ export const students: Student[] = [
         "hometown": "Pabna",
         "highSchool": "Pabna Zilla School",
         "college": "Rajshahi College",
-        "avatarUrl": "/students/Photos/2400060.webp",
+        "avatarUrl": "/students/Photos/2400060.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/rakibulhasan.rabby.3154",
             "whatsapp": "https://wa.me/+8801819796606",
