@@ -1,6 +1,8 @@
 "use client";
 
-import { Search, MapPin, Hash } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { Search, MapPin, Hash, X, User } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface SearchBarProps {
     searchQuery: string;
@@ -15,20 +17,55 @@ export default function SearchBar({
     filterType,
     setFilterType,
 }: SearchBarProps) {
-    return (
-        <div className="sticky top-4 z-40 w-full max-w-3xl mx-auto px-4 mb-12">
-            <div className="bg-white/85 dark:bg-brand-navy/85 backdrop-blur-xl rounded-2xl shadow-[0_4px_24px_rgb(0,0,0,0.08)] dark:shadow-[0_4px_24px_rgba(0,229,255,0.08)] border border-slate-200/50 dark:border-white/10 p-1.5 sm:p-2 flex flex-col sm:flex-row gap-1.5 transition-shadow duration-300 hover:shadow-[0_8px_32px_rgb(0,0,0,0.1)] dark:hover:shadow-[0_8px_32px_rgba(0,229,255,0.12)]">
+    const inputRef = useRef<HTMLInputElement>(null);
+    const [isFocused, setIsFocused] = useState(false);
 
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="sticky top-4 z-40 w-full max-w-3xl mx-auto px-4 mb-14"
+        >
+            <div
+                className={`glass rounded-2xl p-1.5 sm:p-2 flex flex-col sm:flex-row gap-1.5 transition-all duration-300 ${isFocused
+                    ? "border-brand-cyan/20 shadow-[0_0_40px_rgba(0,229,255,0.08)]"
+                    : ""
+                    }`}
+            >
                 {/* Search Input */}
                 <div className="relative flex-grow flex items-center">
-                    <Search className="absolute left-3.5 w-[18px] h-[18px] text-slate-400" />
+                    <Search className={`absolute left-3.5 w-[18px] h-[18px] transition-colors duration-200 ${isFocused ? "text-brand-cyan" : "text-white/30"}`} />
                     <input
+                        ref={inputRef}
                         type="text"
-                        placeholder="Search our family..."
+                        placeholder="Search students..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-full bg-transparent border-none py-2.5 pl-11 pr-4 text-foreground placeholder-slate-400 focus:outline-none focus:ring-0 font-sans text-base sm:text-lg"
+                        onFocus={() => setIsFocused(true)}
+                        onBlur={() => setIsFocused(false)}
+                        className="w-full bg-transparent border-none py-2.5 pl-11 pr-10 text-white placeholder-white/25 focus:outline-none focus:ring-0 font-sans text-base sm:text-lg"
+                        id="search-input"
                     />
+                    {/* Clear button */}
+                    <AnimatePresence>
+                        {searchQuery && (
+                            <motion.button
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.8 }}
+                                transition={{ duration: 0.15 }}
+                                onClick={() => {
+                                    setSearchQuery("");
+                                    inputRef.current?.focus();
+                                }}
+                                className="absolute right-3 p-1 rounded-lg bg-white/5 hover:bg-white/10 text-white/40 hover:text-white/70 transition-all duration-200 cursor-pointer"
+                                aria-label="Clear search"
+                            >
+                                <X className="w-3.5 h-3.5" />
+                            </motion.button>
+                        )}
+                    </AnimatePresence>
                 </div>
 
                 {/* Filter Badges */}
@@ -41,23 +78,24 @@ export default function SearchBar({
                     <FilterButton
                         active={filterType === "name"}
                         onClick={() => setFilterType("name")}
+                        icon={<User className="w-3.5 h-3.5" />}
                         label="Name"
                     />
                     <FilterButton
                         active={filterType === "id"}
                         onClick={() => setFilterType("id")}
-                        icon={<Hash className="w-3.5 h-3.5 mr-0.5" />}
+                        icon={<Hash className="w-3.5 h-3.5" />}
                         label="ID"
                     />
                     <FilterButton
                         active={filterType === "hometown"}
                         onClick={() => setFilterType("hometown")}
-                        icon={<MapPin className="w-3.5 h-3.5 mr-0.5" />}
+                        icon={<MapPin className="w-3.5 h-3.5" />}
                         label="Home"
                     />
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 
@@ -75,9 +113,9 @@ function FilterButton({
     return (
         <button
             onClick={onClick}
-            className={`flex flex-shrink-0 items-center px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 ${active
-                    ? "bg-brand-cyan text-brand-navy shadow-sm font-semibold"
-                    : "bg-transparent text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/60"
+            className={`flex flex-shrink-0 items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-250 cursor-pointer ${active
+                ? "bg-brand-cyan/15 text-brand-cyan border border-brand-cyan/20 font-semibold shadow-[0_0_12px_rgba(0,229,255,0.1)]"
+                : "text-white/40 hover:text-white/60 hover:bg-white/[0.04]"
                 }`}
         >
             {icon}

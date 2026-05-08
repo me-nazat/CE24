@@ -9,7 +9,17 @@ import { students } from "@/data/students";
 
 // Dynamically import heavy components
 const StudentGrid = dynamic(() => import("@/components/StudentGrid"), {
-  loading: () => <div className="w-full text-center py-20 text-brand-cyan">Loading Directory...</div>
+  loading: () => (
+    <div className="w-full py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <div key={i} className="aspect-[3/4] rounded-3xl skeleton" />
+          ))}
+        </div>
+      </div>
+    </div>
+  ),
 });
 const MemoriesFooter = dynamic(() => import("@/components/MemoriesFooter"), { ssr: false });
 
@@ -41,10 +51,10 @@ export default function Home() {
           );
       }
     });
-  }, [searchQuery, filterType]);
+  }, [debouncedSearchQuery, filterType]);
 
   return (
-    <main className="min-h-screen flex flex-col items-center">
+    <main className="min-h-screen flex flex-col items-center bg-brand-deep">
       <HeroSection />
 
       <div className="w-full relative -mt-8 z-20">

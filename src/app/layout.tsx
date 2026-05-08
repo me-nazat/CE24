@@ -16,18 +16,26 @@ const poppins = Poppins({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0B192C",
+  themeColor: "#06090f",
   width: "device-width",
   initialScale: 1,
 };
 
 export const metadata: Metadata = {
   title: "CE 24 — Civil Engineering | RUET",
-  description: "Student directory for Civil Engineering, Series of '24, Section A — Rajshahi University of Engineering and Technology.",
-  keywords: ["RUET", "Civil Engineering", "CE 24", "Student Directory", "Section A"],
+  description:
+    "Student directory for Civil Engineering, Series of '24, Section A — Rajshahi University of Engineering and Technology.",
+  keywords: [
+    "RUET",
+    "Civil Engineering",
+    "CE 24",
+    "Student Directory",
+    "Section A",
+  ],
   openGraph: {
     title: "CE 24 — Civil Engineering | RUET",
-    description: "Meet the students of Civil Engineering, Series '24, Section A at RUET.",
+    description:
+      "Meet the students of Civil Engineering, Series '24, Section A at RUET.",
     type: "website",
   },
 };
@@ -38,9 +46,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
-        className={`${inter.variable} ${poppins.variable} font-sans antialiased`}
+        className={`${inter.variable} ${poppins.variable} font-sans antialiased bg-brand-deep text-foreground`}
       >
         {children}
       </body>

@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import Image from "next/image";
 import { Student } from "@/data/students";
-import { MapPin, GraduationCap, School, Facebook, Phone } from "lucide-react";
+import { MapPin, GraduationCap, School, Facebook, Phone, RotateCcw } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface StudentCardProps {
     student: Student;
@@ -11,6 +12,8 @@ interface StudentCardProps {
 
 export default function StudentCard({ student }: StudentCardProps) {
     const [isFlipped, setIsFlipped] = useState(false);
+    const [imgLoaded, setImgLoaded] = useState(false);
+    const cardRef = useRef<HTMLDivElement>(null);
 
     const handleFlip = useCallback(() => {
         setIsFlipped(prev => !prev);
@@ -18,55 +21,92 @@ export default function StudentCard({ student }: StudentCardProps) {
 
     return (
         <div
-            className="relative w-full aspect-[3/4] max-w-[320px] sm:max-w-sm mx-auto group perspective-1000 cv-auto hover:z-10"
+            ref={cardRef}
+            className="relative w-full aspect-[3/4] max-w-[320px] sm:max-w-sm mx-auto group perspective-1000 cv-auto"
             onClick={handleFlip}
         >
             <div
-                className={`w-full h-full transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] preserve-3d cursor-pointer will-change-transform ${isFlipped ? "rotate-y-180" : ""
+                className={`w-full h-full transition-transform duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] preserve-3d cursor-pointer will-change-transform ${isFlipped ? "rotate-y-180" : ""
                     }`}
                 style={{ transformStyle: "preserve-3d" }}
             >
-                {/* Front of Card */}
+                {/* ── Front ── */}
                 <div
-                    className={`absolute w-full h-full backface-hidden flex flex-col items-center justify-center p-6 rounded-3xl bg-white/90 dark:bg-slate-800/90 backdrop-blur-md shadow-[0_4px_24px_rgb(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgb(0,0,0,0.25)] border transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1 ${student.isRep
-                        ? "border-brand-accent/40 shadow-[0_0_24px_rgba(234,179,8,0.12)] group-hover:shadow-[0_0_36px_rgba(234,179,8,0.25)] group-hover:border-brand-accent/70"
-                        : "border-slate-200/60 dark:border-slate-700/40 group-hover:border-brand-cyan/25 group-hover:shadow-[0_8px_32px_rgba(0,229,255,0.12)]"
+                    className={`absolute w-full h-full backface-hidden flex flex-col items-center justify-center p-6 rounded-3xl transition-all duration-400 ${student.isRep
+                        ? "bg-gradient-to-br from-amber-950/40 via-[rgba(255,255,255,0.04)] to-amber-950/20 border border-brand-accent/20 glow-accent"
+                        : "glass card-lift"
                         }`}
                     style={{ backfaceVisibility: "hidden" }}
                 >
+                    {/* Rep badge */}
                     {student.isRep && (
-                        <div className="absolute top-4 right-4 bg-gradient-to-r from-brand-accent/15 to-brand-accent/5 text-brand-accent text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-[0.15em] border border-brand-accent/20">
-                            ★ Class Rep
+                        <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-brand-accent/10 text-brand-accent text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-[0.15em] border border-brand-accent/20">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="shrink-0">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                            Class Rep
                         </div>
                     )}
 
-                    <div className="relative w-48 h-48 md:w-56 md:h-56 mb-6 rounded-full overflow-hidden border-[3px] border-white dark:border-slate-700 shadow-lg transition-transform duration-300 group-hover:scale-[1.03]">
-                        <Image
-                            src={student.avatarUrl}
-                            alt={student.name}
-                            fill
-                            quality={55}
-                            loading="lazy"
-                            sizes="(max-width: 768px) 192px, 224px"
-                            className="object-cover"
-                        />
+                    {/* Avatar with skeleton */}
+                    <div className="relative w-44 h-44 md:w-52 md:h-52 mb-6 rounded-full overflow-hidden">
+                        {/* Skeleton loader */}
+                        {!imgLoaded && (
+                            <div className="absolute inset-0 skeleton rounded-full" />
+                        )}
+
+                        {/* Ring border */}
+                        <div className={`absolute -inset-[3px] rounded-full ${student.isRep
+                            ? "bg-gradient-to-br from-brand-accent via-amber-300 to-brand-accent"
+                            : "bg-gradient-to-br from-brand-cyan/40 via-indigo-500/30 to-brand-cyan/40"
+                            }`} />
+                        <div className="absolute inset-0 rounded-full bg-brand-deep" />
+
+                        <div className="absolute inset-[3px] rounded-full overflow-hidden">
+                            <Image
+                                src={student.avatarUrl}
+                                alt={student.name}
+                                fill
+                                quality={60}
+                                loading="lazy"
+                                sizes="(max-width: 768px) 176px, 208px"
+                                className={`object-cover transition-all duration-500 group-hover:scale-[1.06] ${imgLoaded ? "opacity-100" : "opacity-0"}`}
+                                onLoad={() => setImgLoaded(true)}
+                            />
+                        </div>
+
+                        {/* Hover glow */}
+                        <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-brand-cyan/10 to-transparent pointer-events-none" />
                     </div>
 
-                    <h3 className="text-lg font-heading font-semibold text-brand-navy dark:text-white mb-1.5 text-center leading-snug">
+                    <h3 className="text-lg font-heading font-semibold text-white mb-1.5 text-center leading-snug">
                         {student.name}
                     </h3>
-                    <p className="text-slate-400 dark:text-slate-500 font-sans font-medium text-sm tracking-wide">
-                        ID: {student.studentId}
+                    <p className="text-white/35 font-sans font-medium text-sm tracking-wider">
+                        {student.studentId}
                     </p>
+
+                    {/* Flip hint */}
+                    <div className="absolute bottom-4 right-4 text-white/15 group-hover:text-white/30 transition-colors duration-300">
+                        <RotateCcw className="w-4 h-4" />
+                    </div>
                 </div>
 
-                {/* Back of Card */}
+                {/* ── Back ── */}
                 <div
-                    className={`absolute w-full h-full backface-hidden rotate-y-180 flex flex-col justify-between p-6 rounded-3xl bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navy border ${student.isRep ? "border-brand-accent/40" : "border-brand-cyan/20"
-                        } shadow-xl text-white`}
+                    className={`absolute w-full h-full backface-hidden rotate-y-180 flex flex-col justify-between p-6 rounded-3xl bg-gradient-to-br from-brand-navy via-[#0d1f3c] to-brand-navy border ${student.isRep ? "border-brand-accent/25" : "border-brand-cyan/15"
+                        } text-white overflow-hidden`}
                     style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
                 >
-                    <div className="space-y-4 flex-1 flex flex-col justify-center">
+                    {/* Subtle pattern on back */}
+                    <div className="absolute inset-0 opacity-[0.03]"
+                        style={{
+                            backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+                            backgroundSize: '24px 24px'
+                        }}
+                    />
+
+                    <div className="relative space-y-5 flex-1 flex flex-col justify-center">
                         <InfoRow
                             icon={<MapPin className="w-[18px] h-[18px] text-brand-cyan shrink-0 mt-0.5" />}
                             label="Hometown"
@@ -85,9 +125,9 @@ export default function StudentCard({ student }: StudentCardProps) {
                     </div>
 
                     {/* Social Links */}
-                    <div className="flex justify-center gap-3 pt-4 border-t border-white/10">
+                    <div className="relative flex justify-center gap-3 pt-5 border-t border-white/[0.06]">
                         {student.socials.facebook && (
-                            <SocialButton href={student.socials.facebook} label="Facebook">
+                            <SocialButton href={student.socials.facebook} label="Facebook" external>
                                 <Facebook className="w-[18px] h-[18px]" />
                             </SocialButton>
                         )}
@@ -112,11 +152,11 @@ export default function StudentCard({ student }: StudentCardProps) {
 
 function InfoRow({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
     return (
-        <div className="flex items-start gap-3">
+        <div className="flex items-start gap-3.5">
             {icon}
             <div className="min-w-0">
-                <p className="text-[10px] text-slate-400 uppercase tracking-[0.15em] font-semibold mb-0.5">{label}</p>
-                <p className="font-medium text-sm leading-snug truncate">{value}</p>
+                <p className="text-[10px] text-white/30 uppercase tracking-[0.18em] font-semibold mb-1">{label}</p>
+                <p className="font-medium text-sm leading-snug text-white/90 truncate">{value}</p>
             </div>
         </div>
     );
@@ -129,7 +169,7 @@ function SocialButton({ href, label, external, children }: { href: string; label
             target={external ? "_blank" : undefined}
             rel={external ? "noopener noreferrer" : undefined}
             aria-label={label}
-            className="p-2.5 rounded-full bg-white/5 hover:bg-brand-cyan hover:text-brand-navy transition-all duration-200 hover:scale-110 active:scale-95"
+            className="p-3 rounded-xl glass glass-hover text-white/60 hover:text-brand-cyan transition-all duration-250 hover:scale-110 active:scale-95 cursor-pointer"
             onClick={(e) => e.stopPropagation()}
         >
             {children}
