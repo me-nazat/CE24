@@ -114,26 +114,25 @@ const fadeUp = {
 };
 
 export default function HeroSection() {
-    const total = 55;
+    const total = 60;
 
     return (
         <section className="relative w-full min-h-[80vh] md:min-h-[88vh] flex items-center justify-center overflow-hidden">
             {/* BG Image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=60&w=1920&auto=format&fit=crop"
+                    src="https://i.ibb.co.com/qFXLSM9M/ce24-A-pic.jpg"
                     alt="University Campus"
                     fill
                     priority
-                    quality={55}
+                    unoptimized
+                    quality={75}
                     sizes="100vw"
                     className="object-cover object-center"
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFAABAAAAAAAAAAAAAAAAAAAABv/EAB8QAAICAgIDAQAAAAAAAAAAAAECAwQABREhBhIxQf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AruR8jt2K1ilDp6cMUyFC7TSl2X+D4wYxB//Z"
                 />
                 {/* Cinematic overlays */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-primary)]/85 via-[var(--bg-primary)]/55 to-[var(--bg-primary)] z-[1]" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg-primary)]/50 via-transparent to-[var(--bg-primary)]/50 z-[1]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-primary)]/75 via-[var(--bg-primary)]/45 to-[var(--bg-primary)] z-[1]" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg-primary)]/40 via-transparent to-[var(--bg-primary)]/40 z-[1]" />
                 <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[var(--bg-primary)] to-transparent z-[2]" />
             </div>
 
