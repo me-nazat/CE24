@@ -1,15 +1,11 @@
 import re
 import os
-import glob
 
-# CR list
 REPS = ["2400005", "2400048"]
 
-# Read new data
 with open('updated_students.txt', 'r') as f:
     lines = [line.strip() for line in f.readlines() if line.strip()]
 
-# Parse blocks
 students_data = {}
 current = {}
 field_index = 0
@@ -32,18 +28,24 @@ for i, line in enumerate(lines):
 if 'studentId' in current:
     students_data[current['studentId']] = current
 
-# Let's map downloaded photos to roll numbers
 photos_dir = '/Users/nazat/Desktop/Desktop/antigravity/ce24/public/students/Photos'
 downloaded_files = os.listdir(photos_dir)
 
 def find_photo(roll):
-    # Find a file that contains the roll number and has a valid extension
+    valid_exts = ('.jpg', '.jpeg', '.png', '.heic')
+    
+    # First, look for a new photo (not webp)
     for f in downloaded_files:
-        if roll in f and f.lower().endswith(('.jpg', '.jpeg', '.png', '.webp', '.heic')):
+        if roll in f and f.lower().endswith(valid_exts):
             return f"/students/Photos/{f}"
+            
+    # Fallback to webp if it exists
+    for f in downloaded_files:
+        if roll in f and f.lower().endswith('.webp'):
+            return f"/students/Photos/{f}"
+            
     return "/students/default-avatar.svg"
 
-# Construct 60 students array
 output = []
 output.append('export interface SocialLinks {')
 output.append('    facebook?: string;')
@@ -70,19 +72,9 @@ for i in range(1, 61):
     data = students_data.get(roll)
     
     avatarUrl = find_photo(roll)
-    
-    # Check if there is an existing webp in default case to retain it (optional, but finding downloaded is better)
-    # Actually, the user said "they updated their photos... update their photos also... so check every single photos and data"
-    # Wait, some people might have .webp from before and they didn't upload new ones.
-    if avatarUrl == "/students/default-avatar.svg":
-        if os.path.exists(os.path.join(photos_dir, f"{roll}.webp")):
-            avatarUrl = f"/students/Photos/{roll}.webp"
-            
     isRep = roll in REPS
     
-    # Check if data exists
     if not data:
-        # Create blank entry
         name = "Unknown"
         hometown = "Unknown"
         highSchool = "Unknown"
@@ -92,7 +84,6 @@ for i in range(1, 61):
         whatsapp = ""
     else:
         name = data.get('name', 'Unknown')
-        # If name is "-", keep it blank
         name = name if name != "-" else ""
         hometown = data.get('hometown', 'Unknown')
         hometown = hometown if hometown != "-" else ""
@@ -104,7 +95,16 @@ for i in range(1, 61):
         facebook = data.get('facebook', '')
         whatsapp = data.get('whatsapp', '')
         
-    # Write dict
+        # fix whatsapp link format if it's full url
+        if whatsapp and not whatsapp.startswith('http'):
+            whatsapp = 'https://' + whatsapp
+        if facebook and not facebook.startswith('http') and facebook != "-":
+            facebook = 'https://' + facebook
+        if facebook == "-":
+            facebook = ""
+        if phone == "-":
+            phone = ""
+            
     output.append('    {')
     output.append(f'        "id": "{i}",')
     output.append(f'        "studentId": "{roll}",')

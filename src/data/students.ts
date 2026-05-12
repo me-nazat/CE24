@@ -223,6 +223,7 @@ export const students: Student[] = [
         "college": "Notre Dame College",
         "avatarUrl": "/students/Photos/2400015.png",
         "socials": {
+            "facebook": "https://www.facebook.com/tahlilislam.rafi",
             "whatsapp": "https://wa.me/+8801741553760",
             "phone": "01741553760"
         }
@@ -668,7 +669,7 @@ export const students: Student[] = [
         "hometown": "Narsingdi",
         "highSchool": "Paratali K.U. High School",
         "college": "Narsingdi Govt. College",
-        "avatarUrl": "/students/Photos/2400047.png",
+        "avatarUrl": "/students/Photos/2400047.jpg",
         "socials": {
             "facebook": "https://www.facebook.com/share/1HKaFuSp2K/",
             "whatsapp": "https://wa.me/+8801572932462",
